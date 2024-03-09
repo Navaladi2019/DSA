@@ -1,5 +1,6 @@
 package dsamaths
 
+/*Greatest Common Divisor*/
 func findGCFConventional(a int, b int) int {
 
 	GCF := 1
@@ -17,11 +18,8 @@ func findGCFConventional(a int, b int) int {
 
 func findGCFThroghEucledian(a int, b int) int {
 
-	gcf := 1
-
 	if b == 0 {
-		gcf = a
-		return gcf
+		return a
 	}
 
 	return findGCFThroghEucledian(b, (max(a, b) - min(a, b)))

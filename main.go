@@ -12,4 +12,5 @@ func main() {
 	fmt.Println(v)
 	k := v.Kind()
 	fmt.Println(k == reflect.Int) // outputs "int"
+
 }
