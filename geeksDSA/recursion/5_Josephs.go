@@ -6,5 +6,5 @@ func findJosephsPosition(n int, k int) int {
 		return 0
 	}
 
-	return findJosephsPosition(n-1, k)
+	return (findJosephsPosition(n-1, k) + k) % n
 }

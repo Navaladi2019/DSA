@@ -37,3 +37,16 @@ func GenerateSubsetsOptimized(str string, curr string, currentIndex int) {
 
 	GenerateSubsetsOptimized(str, curr+string([]rune(str)[currentIndex]), currentIndex+1)
 }
+
+func GenerateSubSetsRevision(str string, curr string, n int) {
+
+	if n == utf8.RuneCountInString(str) {
+
+		fmt.Print(curr)
+		return
+	}
+
+	GenerateSubSetsRevision(str, curr+string([]rune(str)[n]), n+1)
+	GenerateSubSetsRevision(str, curr, n+1)
+
+}
