@@ -1,7 +1,7 @@
 package sorting
 
 /* in lomuto partition we consider the h to be last eleent otherwise we just swap it to be last*/
-func Lomuto_partition(arr []int, low int, high int) {
+func Lomuto_partition(arr []int, low int, high int) int {
 
 	pivot := arr[high]
 	lastHighIndex := low
@@ -18,38 +18,37 @@ func Lomuto_partition(arr []int, low int, high int) {
 
 	}
 
-	arr[high] = arr[lastHighIndex]
-	arr[lastHighIndex] = pivot
+	arr[high], arr[lastHighIndex] = arr[lastHighIndex], arr[high]
+
+	return lastHighIndex
 
 }
 
 /* In Hoares Partition we consider the pivot element to be on first.
 Hoares Partition does not put pivot element in the correct place*/
-func Hoares_Partition(arr []int, low int, high int) {
+func Hoares_Partition(arr []int, low int, high int) int {
 
 	pivot := arr[low]
 
-	i := low
-	j := high
+	i := low - 1
+	j := high + 1
 
 	for {
 
-		for arr[i] < pivot {
+		// below is do whle loop in golang
+		for next := true; next; next = arr[i] < pivot {
 			i++
 		}
 
-		for arr[j] > pivot {
-			j++
+		for next := true; next; next = arr[j] > pivot {
+			j--
 		}
 
 		if i >= j {
-			return
+			return j
 		}
 
-		//swap
-		temp := arr[i]
-		arr[i] = arr[j]
-		arr[j] = temp
+		arr[i], arr[j] = arr[j], arr[i]
 
 	}
 
