@@ -67,3 +67,30 @@ func getMaxSumOfSubArray(arr []int) int {
 
 	return maxSum
 }
+
+// [2,3,-8,7,-1,2,3]
+
+func getMaxSumOfSubArray_1(arr []int) int {
+
+	maxSum := arr[0]
+	lastSum := arr[0]
+
+	for i := 1; i < len(arr); i++ {
+
+		lastSum = max(lastSum+arr[i], arr[i])
+		maxSum = max(lastSum, maxSum)
+
+	}
+
+	return maxSum
+}
+
+func getMaxSumOfSubArray_Circular(arr []int) int {
+
+	maxSubArraySum := getMaxSumOfSubArray(arr)
+
+	circulararr := append(arr[1:], arr[:1]...)
+	maxSubArraySumCir := getMaxSumOfSubArray(circulararr)
+
+	return max(maxSubArraySum, maxSubArraySumCir)
+}

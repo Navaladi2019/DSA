@@ -20,7 +20,7 @@ func Test_ReverseArray(t *testing.T) {
 
 	for _, tc := range ReverseArraytcs() {
 		t.Run("tc", func(t *testing.T) {
-			got := ReverseAnArray(tc.ip)
+			got := ReverseAnArray_1(tc.ip)
 
 			for j := 0; j < len(tc.want); j++ {
 				if got[j] != tc.want[j] {

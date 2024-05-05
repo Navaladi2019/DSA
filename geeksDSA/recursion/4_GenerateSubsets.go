@@ -2,8 +2,11 @@ package recursion
 
 import (
 	"fmt"
+	"testing"
 	"unicode/utf8"
 )
+
+var t *testing.T
 
 func GenerateSubSets(str string, subsets []string, currentIndex int) []string {
 
@@ -36,6 +39,19 @@ func GenerateSubsetsOptimized(str string, curr string, currentIndex int) {
 	GenerateSubsetsOptimized(str, curr, currentIndex+1) // ->
 
 	GenerateSubsetsOptimized(str, curr+string([]rune(str)[currentIndex]), currentIndex+1)
+}
+
+func rec(prefic string, str string, depth int, test *testing.T) {
+
+	t = test
+	if depth >= len(str) {
+		t.Log(prefic)
+		return
+	}
+
+	rec(prefic, str, depth+1, test)
+	rec(prefic+string(str[depth]), str, depth+1, test)
+
 }
 
 func GenerateSubSetsRevision(str string, curr string, n int) {

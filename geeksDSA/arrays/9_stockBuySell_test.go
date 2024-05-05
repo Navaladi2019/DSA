@@ -21,7 +21,7 @@ func Test_StockBuySellTestCase(t *testing.T) {
 
 	for _, tc := range StockBuySelltcs() {
 
-		got := findMaxProfitinStocksBuyandSell(tc.ip)
+		got := FindStockProfit(tc.ip)
 		if got != tc.want {
 			t.Error("has error")
 		}

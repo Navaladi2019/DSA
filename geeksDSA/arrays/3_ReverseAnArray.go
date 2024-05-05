@@ -10,3 +10,18 @@ func ReverseAnArray(arr []int) []int {
 
 	return arr
 }
+
+func ReverseAnArray_1(arr []int) []int {
+
+	i := 0
+	j := len(arr) - 1
+
+	for i < j {
+
+		arr[i], arr[j] = arr[j], arr[i]
+		i++
+		j--
+	}
+
+	return arr
+}

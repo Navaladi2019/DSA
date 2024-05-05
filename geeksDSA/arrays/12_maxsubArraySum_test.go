@@ -27,10 +27,31 @@ var MaxSumofSubArraytcs = func() []MaxSumofSubArraytc {
 	}
 }
 
+var MaxSumofSubArrayCirculartcs = func() []MaxSumofSubArraytc {
+
+	return []MaxSumofSubArraytc{
+		{[]int{5, -2, 3, 4}, 12},
+		{[]int{2, 3, -4}, 5},
+		{[]int{8, -4, 3, -5, 4}, 12},
+		{[]int{-3, 4, 6, -2}, 10},
+	}
+}
+
 func Test_GetMaxSumofSubArray(t *testing.T) {
 
 	for _, tc := range MaxSumofSubArraytcs() {
-		got := getMaxSumOfSubArray(tc.ip)
+		got := getMaxSumOfSubArray_1(tc.ip)
+
+		if got != tc.want {
+			t.Error("failed")
+		}
+	}
+}
+
+func Test_GetMaxSumofSubArrayCircular(t *testing.T) {
+
+	for _, tc := range MaxSumofSubArrayCirculartcs() {
+		got := getMaxSumOfSubArray_Circular(tc.ip)
 
 		if got != tc.want {
 			t.Error("failed")

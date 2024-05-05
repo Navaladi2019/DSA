@@ -23,3 +23,23 @@ func findMaxProfitinStocksBuyandSell(arr []int) int {
 
 	return profit
 }
+
+func FindStockProfit(arr []int) int {
+	profit := 0
+
+	lastLowVal := arr[0]
+
+	for i := 0; i < len(arr); i++ {
+
+		if arr[i] < lastLowVal {
+			lastLowVal = arr[i]
+		}
+
+		if arr[i] > lastLowVal {
+			profit = profit + arr[i] - lastLowVal
+			lastLowVal = arr[i]
+		}
+	}
+
+	return profit
+}
