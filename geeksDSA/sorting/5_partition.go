@@ -4,27 +4,33 @@ package sorting
 func Lomuto_partition(arr []int, low int, high int) int {
 
 	pivot := arr[high]
-	lastHighIndex := low
+	partitionIndex := low
 
 	for i := low; i <= high-1; i++ {
-
 		if arr[i] < pivot {
-			arr[i], arr[lastHighIndex] = arr[lastHighIndex], arr[i]
-			lastHighIndex++
+			arr[i], arr[partitionIndex] = arr[partitionIndex], arr[i]
+			partitionIndex++
 		}
-
 	}
 
-	arr[high], arr[lastHighIndex] = arr[lastHighIndex], arr[high]
+	arr[high], arr[partitionIndex] = arr[partitionIndex], arr[high]
 
-	return lastHighIndex
+	return partitionIndex
 
 }
 
 /* In Hoares Partition we consider the pivot element to be on first.
-Hoares Partition does not put pivot element in the correct place*/
+Hoares Partition does not put pivot element in the correct place
+
+Here we use do while loop because after the first swap when we return partition key we need to return next index
+and not the index we swapped last
+
+*/
 func Hoares_Partition(arr []int, low int, high int) int {
 
+	if len(arr) == 0 {
+		return -1
+	}
 	pivot := arr[low]
 
 	i := low - 1
