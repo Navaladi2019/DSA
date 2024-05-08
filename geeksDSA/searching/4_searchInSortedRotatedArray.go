@@ -2,6 +2,7 @@ package searching
 
 //[10,20,50,60,5,8]
 //[10, 20, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+// Here there is only two possibility either right half is sorted or left half is sorted
 func FindInSortedRoratedArray(arr []int, n int) int {
 
 	low := 0
@@ -25,10 +26,9 @@ func FindInSortedRoratedArray(arr []int, n int) int {
 			}
 
 		} else {
-
+			// right half is sorted
 			if arr[mid] <= arr[high] && arr[mid] < n {
 
-				// right half is sorted
 				low = mid + 1
 			} else {
 

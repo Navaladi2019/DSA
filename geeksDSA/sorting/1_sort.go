@@ -12,9 +12,7 @@ func BubbleSort(arr []int) {
 		for j := 0; j < len(arr)-1-i; j++ {
 
 			if arr[j] > arr[j+1] {
-				temp := arr[j]
-				arr[j] = arr[j+1]
-				arr[j+1] = temp
+				arr[j], arr[j+1] = arr[j+1], arr[j]
 				swapped = true
 			}
 		}
@@ -26,7 +24,8 @@ func BubbleSort(arr []int) {
 }
 
 /*
-has o(n^2) and its  not a stable sort but it has very less swap
+has o(n^2) and its  not a stable sort but it has very less swap.
+Selection Sort works by putting small elements at i ( from left to right)
 */
 func SelectionSort(arr []int) {
 
@@ -38,10 +37,7 @@ func SelectionSort(arr []int) {
 				minindex = j
 			}
 		}
-
-		temp := arr[i]
-		arr[i] = arr[minindex]
-		arr[minindex] = temp
+		arr[i], arr[minindex] = arr[minindex], arr[i]
 	}
 }
 
@@ -55,14 +51,11 @@ func InsertionSort(arr []int) {
 
 		temp := arr[i]
 
-		j := i - 1
-
-		for j >= 0 && arr[j] > temp {
+		for j := i - 1; j >= 0 && arr[j] > temp; j-- {
 			arr[j+1] = arr[j]
-			j--
 		}
 
-		arr[j+1] = temp
+		arr[i] = temp
 
 	}
 }
