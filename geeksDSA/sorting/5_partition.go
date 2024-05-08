@@ -9,10 +9,7 @@ func Lomuto_partition(arr []int, low int, high int) int {
 	for i := low; i <= high-1; i++ {
 
 		if arr[i] < pivot {
-
-			temp := arr[i]
-			arr[i] = arr[lastHighIndex]
-			arr[lastHighIndex] = temp
+			arr[i], arr[lastHighIndex] = arr[lastHighIndex], arr[i]
 			lastHighIndex++
 		}
 

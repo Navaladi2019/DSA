@@ -42,7 +42,7 @@ func SelectionSort(arr []int) {
 }
 
 /* Insertion sort works better with small items
-
+Here we consider that left side is aleady sorted
 its a stable sorting algorithm
 */
 
@@ -51,11 +51,14 @@ func InsertionSort(arr []int) {
 
 		temp := arr[i]
 
-		for j := i - 1; j >= 0 && arr[j] > temp; j-- {
+		j := i - 1
+
+		for j >= 0 && arr[j] > temp {
 			arr[j+1] = arr[j]
+			j--
 		}
 
-		arr[i] = temp
+		arr[j+1] = temp
 
 	}
 }
@@ -91,7 +94,7 @@ func MergerTwoSortedSort(arr1 []int, arr2 []int) []int {
 func MergeSort(arr []int, l int, r int) {
 
 	if l < r {
-		mid := l + ((r - l) / 2)
+		mid := l + (r-l)/2
 		MergeSort(arr, l, mid)
 		MergeSort(arr, mid+1, r)
 		Merge(arr, l, mid, r)
@@ -102,11 +105,11 @@ func MergeSort(arr []int, l int, r int) {
 /* it has o(n) and n auxillary space*/
 func Merge(arr []int, low int, mid int, high int) {
 
-	left := make([]int, mid-low)
-	copy(left, arr[low:mid])
+	left := make([]int, mid-low+1)
+	copy(left, arr[low:mid+1])
 
 	right := make([]int, (high - mid))
-	copy(right, arr[mid:high])
+	copy(right, arr[mid+1:high+1])
 
 	i := 0
 	j := 0
@@ -125,13 +128,13 @@ func Merge(arr []int, low int, mid int, high int) {
 
 	}
 
-	for i < len(left)-1 {
+	for i < len(left) {
 		arr[k] = left[i]
 		i++
 		k++
 
 	}
-	for j < len(left)-1 {
+	for j < len(right) {
 		arr[k] = right[j]
 		j++
 		k++

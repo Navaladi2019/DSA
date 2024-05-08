@@ -17,12 +17,12 @@ func finduionOfTwoArrays(arr1 []int, arr2 []int) []int {
 	result = append(result, lastpushed)
 	for i < len(arr1) && j < len(arr2) {
 
-		if i < len(arr1) && arr1[i] == result[len(result)-1] {
+		if arr1[i] == result[len(result)-1] {
 			i++
 			continue
 		}
 
-		if j < len(arr2) && arr2[j] == result[len(result)-1] {
+		if arr2[j] == result[len(result)-1] {
 			j++
 			continue
 		}
