@@ -12,7 +12,7 @@ type SearchInSortedMatyricTc struct {
 var SearchInSortedMatyricTcs = func() []SearchInSortedMatyricTc {
 
 	return []SearchInSortedMatyricTc{
-		{[][]int{{10, 20, 30, 40}, {15, 25, 35, 45}, {27, 29, 37, 48}, {32, 33, 39, 50}}, 29, 2, 1},
+		{[][]int{{10, 20, 30, 40}, {15, 25, 35, 45}, {27, 29, 37, 48}, {32, 33, 39, 50}}, 27, 2, 0},
 	}
 }
 

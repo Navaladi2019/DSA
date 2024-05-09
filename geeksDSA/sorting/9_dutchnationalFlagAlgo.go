@@ -1,5 +1,7 @@
 package sorting
 
+// ITS A VARIATION OF HOARES ALGORITHM
+//[0,1,2,0,1,1,2]
 func SortThreeItemsInArray(arr []int) {
 
 	low, mid, high := 0, 0, len(arr)-1

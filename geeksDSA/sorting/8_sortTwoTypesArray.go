@@ -2,6 +2,7 @@ package sorting
 
 type FnIsArrayType func(i int) bool
 
+// this problem is similar to move zeros to left
 func SortTwoTypesArray(arr []int, istype FnIsArrayType) {
 
 	left := 0

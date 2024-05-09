@@ -4,6 +4,7 @@ import (
 	"sort"
 )
 
+// HERE MAKE A TABLE FOR ARRIVAL AND DEPARTURE
 func FindMaximunMeetingGuestTime(arrival []int, departure []int) int {
 
 	result := 0
@@ -26,6 +27,6 @@ func FindMaximunMeetingGuestTime(arrival []int, departure []int) int {
 
 		}
 	}
-
+	result = max(result, current)
 	return result
 }

@@ -13,21 +13,23 @@ func SearchInRowColumnSortedMatrix(mat [][]int, targer int) (int, int) {
 		}
 		if mat[0][i] < targer {
 			y = i
-			break
-		}
-	}
-
-	if x != -1 && y != -1 {
-		return x, y
-	}
-
-	for i := 1; i < len(mat); i++ {
-
-		if mat[i][y] == targer {
-			x = i
-			break
 		}
 
+		if y != -1 {
+			for j := 1; j < len(mat); j++ {
+
+				if mat[j][y] == targer {
+					x = j
+					break
+				}
+
+			}
+		}
+
+	}
+
+	if x == -1 || y == -1 {
+		return -1, -1
 	}
 
 	return x, y

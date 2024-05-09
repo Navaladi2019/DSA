@@ -14,12 +14,12 @@ func BoundaryTraversal(mat [][]int) (arr []int) {
 	}
 
 	if len(mat) > 1 {
-		matrixlateElement := len(mat) - 1
-		lastElementLength := len(mat[matrixlateElement])
+		matrixlastElement := len(mat) - 1
+		lastElementLength := len(mat[matrixlastElement])
 		// appending last row
 		for i := lastElementLength - 1; i >= 0; i-- {
 
-			arr = append(arr, mat[matrixlateElement][i])
+			arr = append(arr, mat[matrixlastElement][i])
 		}
 
 	}
