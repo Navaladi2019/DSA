@@ -11,7 +11,6 @@ func LongestSubArrayWithGivenSum(arr []int, sum int) int {
 		presum += arr[i]
 
 		if presum == sum {
-
 			length = i + 1
 		}
 

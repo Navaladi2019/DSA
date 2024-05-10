@@ -38,6 +38,8 @@ func reverseRune(r []rune, start int, end int) {
 
 	for start != end {
 		r[start], r[end] = r[end], r[start]
+		start++
+		end--
 	}
 
 }
