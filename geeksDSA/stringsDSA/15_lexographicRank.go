@@ -2,7 +2,7 @@ package stringsDSA
 
 /*
 
-BAC -. we sort it and find permutation and tell at which count the target string is formed0
+BAC -. we sort it and find permutation and tell at which count the target string is formed
 
 */
 func LexographicRank(str string) int {
