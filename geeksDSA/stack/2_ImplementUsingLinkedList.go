@@ -1,40 +1,55 @@
 package stack
 
-import (
-	"github.com/Navaladi2019/GoRefresher/linkedlists"
-)
+type Node[T any] struct {
+	value T
+	next  *Node[T]
+}
 
-type LLStack[t comparable] struct {
-	data linkedlists.SinglyLinkedList
+type LLStack[T any] struct {
+	head *Node[T]
+	size int
 }
 
 func (s *LLStack[T]) Cap() int {
-	return cap(s.data)
+	return s.size
 }
 
 func (s *LLStack[T]) Peek() (T, bool) {
-	return s.extracLastdata()
+
+	var val T
+	ok := false
+	pointer := s.head
+
+	if pointer != nil {
+		val = pointer.value
+		ok = true
+	}
+	return val, ok
 }
 
-func (s *LLStack[T]) extracLastdata() (T, bool) {
-	var zerodata T
-	res := false
-	if len(s.data) >= 1 {
-		return s.data[len(s.data)-1], true
-	}
-	return zerodata, res
+func (s *LLStack[T]) Push(val T) {
+
+	n := &Node[T]{value: val}
+	n.next = s.head
+	s.head = n
+	s.size++
 }
 
 func (s *LLStack[T]) Pop() (T, bool) {
 
-	val, ok := s.extracLastdata()
-	if ok {
-		s.data = s.data[0 : len(s.data)-2]
-	}
+	var val T
+	ok := false
+	pointer := s.head
 
+	if pointer != nil {
+		val = pointer.value
+		ok = true
+		s.head = s.head.next
+		s.size--
+	}
 	return val, ok
 }
 
 func (s *LLStack[T]) isEmpty() bool {
-	return len(s.data) == 0
+	return s.size == 0
 }

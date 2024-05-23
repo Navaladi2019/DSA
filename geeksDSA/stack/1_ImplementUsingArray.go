@@ -1,5 +1,7 @@
 package stack
 
+// array implementation of stack is value type and not reference type
+// so when you pass the value to other and push it it would not be available
 type ArrStack[T comparable] struct {
 	data []T
 }
@@ -21,11 +23,15 @@ func (s *ArrStack[T]) extracLastdata() (T, bool) {
 	return zerodata, res
 }
 
+func (s *ArrStack[T]) Push(val T) {
+	s.data = append(s.data, val)
+}
+
 func (s *ArrStack[T]) Pop() (T, bool) {
 
 	val, ok := s.extracLastdata()
 	if ok {
-		s.data = s.data[0 : len(s.data)-2]
+		s.data = s.data[:len(s.data)-1]
 	}
 
 	return val, ok
