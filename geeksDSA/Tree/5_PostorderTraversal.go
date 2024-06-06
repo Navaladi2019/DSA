@@ -10,4 +10,5 @@ func TraversalPostOrder(n *Node[int]) {
 	TraversalPostOrder(n.left)
 	TraversalPostOrder(n.right)
 	fmt.Println(n.data)
+
 }
