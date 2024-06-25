@@ -21,8 +21,8 @@ var MaxInArrayTcs = func() []MaxInArrayTc {
 var MaxInArraySecondTcs = func() []MaxInArrayTc {
 
 	return []MaxInArrayTc{
-		{input: []int{5, 20, 12, 20, 10},
-			want: 2},
+		{input: []int{25, 20, 12, 20, 10},
+			want: 1},
 		{input: []int{10, 5, 8, 20},
 			want: 0},
 		{input: []int{10, 10, 10},

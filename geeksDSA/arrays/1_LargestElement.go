@@ -21,6 +21,8 @@ func FindSecondLargestElementIndex(arr []int) int {
 		if arr[i] > arr[maxIndex] {
 			secondindex = maxIndex
 			maxIndex = i
+		} else if secondindex == -1 && i != maxIndex {
+			secondindex = i
 		} else if secondindex != -1 && arr[i] > arr[secondindex] && arr[i] != arr[maxIndex] {
 			secondindex = i
 		}

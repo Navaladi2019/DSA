@@ -12,7 +12,7 @@ func TOH(n int, A rune, B rune, C rune) {
 
 	TOH(n-1, A, C, B)
 
-	fmt.Printf("Moving %d from %c to %c \n", n-1, A, C)
+	fmt.Printf("Moving %d from %c to %c \n", n, A, C)
 
 	TOH(n-1, B, A, C)
 }

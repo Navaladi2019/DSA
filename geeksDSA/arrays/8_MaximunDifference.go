@@ -6,15 +6,8 @@ func findMaximunDifferenceArray(arr []int) int {
 	lowestLeftNumber := arr[0]
 
 	for i := 1; i < len(arr); i++ {
-
-		if arr[i]-lowestLeftNumber > maxdifference {
-			maxdifference = arr[i] - lowestLeftNumber
-		}
-
-		if lowestLeftNumber > arr[i] {
-			lowestLeftNumber = arr[i]
-		}
-
+		maxdifference = max(maxdifference, arr[i]-lowestLeftNumber)
+		lowestLeftNumber = min(lowestLeftNumber, arr[i])
 	}
 
 	return maxdifference

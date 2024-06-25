@@ -49,3 +49,24 @@ func FindPath(n *Node[int], s *[]*Node[int], num int) bool {
 	*s = (*s)[0 : len(*s)-1]
 	return false
 }
+
+func FindLCA_Effficient(n *Node[int], n1 int, n2 int) *Node[int] {
+
+	if n == nil || n.data == n1 || n.data == n2 {
+		return n
+	}
+
+	LLca := FindLCA_Effficient(n.left, n1, n2)
+	RLca := FindLCA_Effficient(n.left, n1, n2)
+
+	if LLca != nil && RLca != nil {
+		return n
+	}
+
+	if LLca != nil {
+		return LLca
+	}
+
+	return RLca
+
+}
