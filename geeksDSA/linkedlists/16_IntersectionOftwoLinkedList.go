@@ -1,5 +1,7 @@
 package linkedlists
 
+import "math"
+
 func FindIntersectionOfTwoLinkedList(l1 SinglyLinkedList, l2 SinglyLinkedList) *NodeSingle {
 
 	l1Coun, l2Coun := 0, 0
@@ -12,18 +14,31 @@ func FindIntersectionOfTwoLinkedList(l1 SinglyLinkedList, l2 SinglyLinkedList) *
 		l2Coun++
 	}
 
-	targetLL := l2
+	targetLL := l2.head
+	passll := l1.head
 	diff := l1Coun - l2Coun
 
-	if l2Coun > l1Coun {
-		diff = l1Coun - l2Coun
-		targetLL = l2
+	if l2Coun < l1Coun {
+		targetLL = l1.head
+		passll = l2.head
 	}
 
-	var intersection *NodeSingle = targetLL.head
+	for i := 0; i < int(math.Abs(float64(diff))); i++ {
+		targetLL = targetLL.next
 
-	for i := 1; i < diff; i++ {
-		intersection = intersection.next
+	}
+
+	var intersection *NodeSingle
+
+	for targetLL != nil && passll != nil {
+
+		if targetLL == passll {
+			intersection = targetLL
+			break
+		}
+		targetLL = targetLL.next
+		passll = passll.next
+
 	}
 
 	return intersection

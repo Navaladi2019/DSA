@@ -24,7 +24,6 @@ func DetectLoopAndRemove(h *NodeSingle) {
 		slow = slow.next
 		fast = fast.next
 	}
-
 	fast.next = nil
 
 }

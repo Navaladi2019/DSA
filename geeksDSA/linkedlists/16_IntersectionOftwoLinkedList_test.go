@@ -19,7 +19,7 @@ func Test_FindIntersectionOfTwoLinkedList(t *testing.T) {
 	h4.next = h5
 	h5.next = h6
 
-	nn := &NodeSingle{data: 10, next: h4}
+	nn := &NodeSingle{data: 10, next: &NodeSingle{data: 10, next: h4}}
 
 	node := FindIntersectionOfTwoLinkedList(SinglyLinkedList{head: h}, SinglyLinkedList{head: nn})
 

@@ -18,13 +18,13 @@ func Test_reverseLinkedListInGroups(t *testing.T) {
 
 	l := SinglyLinkedList{}
 
-	l.Insert(10, 20, 30, 40, 50)
+	l.Insert(10, 20, 30, 40, 50, 60, 70, 80, 90, 91, 92)
 
 	RecursiveLinkedList(l.head)
 
 	fmt.Println("****")
 
-	l = reverseLinkedListInGroups(l, 8)
+	l = reverseLinkedListInGroups(l, 3)
 
 	RecursiveLinkedList(l.head)
 
