@@ -18,7 +18,7 @@ func LevelOrderTraversalEfficient(n *Node[int]) {
 	q := queue.ArrQueue[*Node[int]]{}
 	q.Init(10)
 	q.Enqueue(n)
-	q.Enqueue(nil)
+	//q.Enqueue(nil)
 
 	for q.IsEmpty() == false {
 
@@ -48,12 +48,10 @@ func LevelOrderTraversalEfficient_NewLine_1(n *Node[int]) {
 
 		if qn == nil {
 			fmt.Println()
-			q.Enqueue(nil)
-			val, _ := q.GetFront()
-
-			if val == nil {
+			if q.IsEmpty() {
 				break
 			}
+			q.Enqueue(nil)
 			continue
 		}
 

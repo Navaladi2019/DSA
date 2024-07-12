@@ -21,7 +21,7 @@ func FindLCA_1(n *Node[int], n1 int, n2 int) *Node[int] {
 		if i+1 >= len(s2) {
 			return s1[i]
 		}
-		if s1[i+1].data != s2[i+1].data {
+		if s1[i+1] != s2[i+1] {
 			{
 				return s1[i]
 			}

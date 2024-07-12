@@ -23,7 +23,6 @@ func MaxWidth(n *Node[int]) int {
 			if qn.right != nil {
 				q.Enqueue(qn.right)
 			}
-
 		}
 		count = max(count, s)
 	}

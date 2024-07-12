@@ -6,19 +6,19 @@ import (
 )
 
 func Test_LevelOrderTraversal_Efficient(t *testing.T) {
-	LevelOrderTraversalEfficient_NewLine_2(getNodeIn1())
+	LevelOrderTraversalEfficient_NewLine_1(getNodeIn1())
 	fmt.Println("****")
-	LevelOrderTraversalEfficient_NewLine_2(getNodeIn2())
+	LevelOrderTraversalEfficient_NewLine_1(getNodeIn2())
 	fmt.Println("****")
-	LevelOrderTraversalEfficient_NewLine_2(getNodeIn3())
+	LevelOrderTraversalEfficient_NewLine_1(getNodeIn3())
 	fmt.Println("****")
 }
 func Test_LevelOrderTraversal(t *testing.T) {
-	LevelOrderTraversal_Naive(getNodeIn1())
+	LevelOrderTraversalEfficient(getNodeIn1())
 	fmt.Println("****")
-	LevelOrderTraversal_Naive(getNodeIn2())
+	LevelOrderTraversalEfficient(getNodeIn2())
 	fmt.Println("****")
-	LevelOrderTraversal_Naive(getNodeIn3())
+	LevelOrderTraversalEfficient(getNodeIn3())
 	fmt.Println("****")
 }
 

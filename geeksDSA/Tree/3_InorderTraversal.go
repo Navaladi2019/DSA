@@ -2,6 +2,7 @@ package tree
 
 import "fmt"
 
+// left, root , right
 func TraversalInOrder(n *Node[int]) {
 	if n == nil {
 		return
