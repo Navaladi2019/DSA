@@ -9,7 +9,7 @@ func FindPreviousGreater(arr []int, n int) int {
 	}
 	for i := 1; i <= n; i++ {
 
-		for !sk.isEmpty() {
+		for !sk.IsEmpty() {
 			valIndex, _ := sk.Peek()
 			if arr[valIndex] < arr[n] {
 				sk.Pop()
@@ -22,7 +22,7 @@ func FindPreviousGreater(arr []int, n int) int {
 		}
 	}
 
-	if sk.isEmpty() {
+	if sk.IsEmpty() {
 		return -1
 	} else {
 		val, _ := sk.Pop()

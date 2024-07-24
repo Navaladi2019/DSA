@@ -8,7 +8,7 @@ func NextGreaterElement(arr []int) {
 
 	for i := len(arr) - 1; i >= 0; i-- {
 
-		for !s.isEmpty() {
+		for !s.IsEmpty() {
 			val, _ := s.Peek()
 			if arr[val] < arr[i] {
 				s.Pop()
@@ -18,7 +18,7 @@ func NextGreaterElement(arr []int) {
 
 		}
 
-		if s.isEmpty() {
+		if s.IsEmpty() {
 			fmt.Println(-1)
 		} else {
 			val, _ := s.Peek()

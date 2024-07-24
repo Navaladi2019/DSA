@@ -19,9 +19,8 @@ func FindDiaOfBinaryTree_Efficient(n *Node[int]) int {
 		return 0
 	}
 
-	d2 := FindDiaOfBinaryTree_Efficient(n.left)
-	d3 := FindDiaOfBinaryTree_Efficient(n.right)
-
-	res = max(res, d2+d3+1)
-	return 1 + max(d2, d3)
+	d1 := FindDiaOfBinaryTree_Efficient(n.left)
+	d2 := FindDiaOfBinaryTree_Efficient(n.right)
+	res = max(res, d1+d2+1)
+	return 1 + max(d1, d2)
 }

@@ -37,6 +37,6 @@ func (s *ArrStack[T]) Pop() (T, bool) {
 	return val, ok
 }
 
-func (s *ArrStack[T]) isEmpty() bool {
+func (s *ArrStack[T]) IsEmpty() bool {
 	return len(s.data) == 0
 }

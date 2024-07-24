@@ -13,7 +13,6 @@ func BTToDLL(n *Node[int]) *Node[int] {
 		n.left = prev
 		prev.right = n
 	}
-
 	prev = n
 	BTToDLL(n.right)
 	return head

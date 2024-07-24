@@ -11,7 +11,7 @@ func GetLargestRectangularArea(arr []int) int {
 		for val, ok := st.Peek(); ok && arr[val] >= arr[i]; val, ok = st.Peek() {
 			st.Pop()
 			curr := arr[val]
-			if st.isEmpty() {
+			if st.IsEmpty() {
 				curr = curr * i
 			} else {
 				nexttop, _ := st.Peek()
@@ -25,13 +25,13 @@ func GetLargestRectangularArea(arr []int) int {
 		st.Push(i)
 	}
 
-	for !st.isEmpty() {
+	for !st.IsEmpty() {
 
 		val, _ := st.Pop()
 
 		curr := arr[val]
 
-		if st.isEmpty() {
+		if st.IsEmpty() {
 			curr = curr * len(arr)
 		} else {
 			nexttop, _ := st.Peek()

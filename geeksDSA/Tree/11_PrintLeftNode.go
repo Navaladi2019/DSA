@@ -28,8 +28,9 @@ func PrintLeftMostNode(n *Node[int], level int) {
 		return
 	}
 
-	if level < maxlevel {
+	if maxlevel < level {
 		fmt.Println(n.data)
+		maxlevel = level
 	}
 
 	PrintLeftMostNode(n.left, level+1)
