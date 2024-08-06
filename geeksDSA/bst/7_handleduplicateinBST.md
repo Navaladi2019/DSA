@@ -1,0 +1,2 @@
+simply add a avariable count in node and if the we have duplicate keys then just simply increment the count Count++ on isert and count-- on delete/
+In case of self balancing trees the if the count is zero then rebalance else do ot rebalance
