@@ -1,6 +1,9 @@
 package recursion
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_Premutations(t *testing.T) {
 
@@ -8,5 +11,5 @@ func Test_Premutations(t *testing.T) {
 
 	PrintAllPermutations_Efficient([]string{"a", "b", "c"}, 0, &sli)
 
-	t.Log(sli)
+	fmt.Println(sli)
 }

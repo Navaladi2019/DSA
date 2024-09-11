@@ -5,11 +5,9 @@ import (
 )
 
 func test1(i int) {
-
 	if i == 0 {
 		return
 	}
-
 	fmt.Println(i)
 	test1(i)
 	fmt.Println(i)

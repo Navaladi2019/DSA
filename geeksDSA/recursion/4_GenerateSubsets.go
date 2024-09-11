@@ -32,7 +32,7 @@ func GenerateSubsetsOptimized(str string, curr string, currentIndex int) {
 
 	if currentIndex == utf8.RuneCountInString(str) {
 
-		fmt.Print(curr)
+		fmt.Println(curr)
 		return
 	}
 
@@ -43,9 +43,8 @@ func GenerateSubsetsOptimized(str string, curr string, currentIndex int) {
 
 func rec(prefic string, str string, depth int, test *testing.T) {
 
-	t = test
 	if depth >= len(str) {
-		t.Log(prefic)
+		fmt.Println(prefic)
 		return
 	}
 

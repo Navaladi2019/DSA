@@ -1,0 +1,8 @@
+-- shortest patyh in an unweighted graph
+-- crawlers in search engine
+-- peer to peer network
+-- social newtworking search
+-- In garnage collection
+-- cycle detection
+-- Ford Fulkerson algorithm
+-- broadcasting

@@ -1,0 +1,5 @@
+-- Cycle Detection
+-- Topological Sorting
+-- Strogly Connected components
+-- Solve maze and similar puzzles
+-- Path Finding 
