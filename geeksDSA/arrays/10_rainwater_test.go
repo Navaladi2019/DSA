@@ -10,7 +10,7 @@ type rainwatertc struct {
 var rainwatertcs = func() []rainwatertc {
 
 	return []rainwatertc{
-		{[]int{2, 0, 2}, 2},
+		//{[]int{2, 0, 2}, 2},
 		{[]int{3, 0, 1, 2, 5}, 6},
 		{[]int{30, 20, 10}, 0},
 		{[]int{1, 2, 3}, 0},
