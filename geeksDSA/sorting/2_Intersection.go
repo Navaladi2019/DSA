@@ -29,3 +29,36 @@ func FindInterSectionOdTwoSortedArray(arr1 []int, arr2 []int) []int {
 	return result
 
 }
+
+func FindInterSectionOdTwoSortedArray_1(arr1 []int, arr2 []int) (res []int) {
+
+	i, j := 0, 0
+
+	for i < len(arr1) && j < len(arr2) {
+
+		if i > 0 && arr1[i] == arr1[i-1] {
+			i++
+			continue
+		}
+
+		if arr2[j] == arr1[i] {
+			res = append(res, arr1[i])
+			i++
+			j++
+		}
+
+		if arr1[i] < arr2[j] {
+			i++
+
+		}
+
+		if i < len(arr1) && arr1[i] > arr2[j] {
+			j++
+
+		}
+
+	}
+
+	return
+
+}

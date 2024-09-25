@@ -38,3 +38,31 @@ func ReverseLinkedInGroup(n *NodeSingle, curperv *NodeSingle, k int) (*NodeSingl
 
 	return prev, curr
 }
+
+func ReverseLinkedListInGroups_1(l SinglyLinkedList, k int) SinglyLinkedList {
+
+	reverseinGroups := func(curr *NodeSingle) (prev *NodeSingle, nextCurr *NodeSingle) {
+
+		for j := 0; j < k && curr != nil; j++ {
+			tempcur := curr.next
+			curr.next = prev
+			prev = curr
+			curr = tempcur
+		}
+		nextCurr = curr
+		return
+	}
+	//10, 20, 30, 40, 50, 60, 70, 80, 90, 91, 92
+	curr := l.head
+	prev := l.head
+	l.head, curr = reverseinGroups(curr)
+
+	for curr != nil {
+		tempCurr := curr
+		prev.next, curr = reverseinGroups(curr)
+		prev = tempCurr
+
+	}
+
+	return l
+}

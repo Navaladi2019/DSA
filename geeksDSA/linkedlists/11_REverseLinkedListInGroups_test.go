@@ -24,7 +24,7 @@ func Test_reverseLinkedListInGroups(t *testing.T) {
 
 	fmt.Println("****")
 
-	l = reverseLinkedListInGroups(l, 3)
+	l = ReverseLinkedListInGroups_1(l, 3)
 
 	RecursiveLinkedList(l.head)
 

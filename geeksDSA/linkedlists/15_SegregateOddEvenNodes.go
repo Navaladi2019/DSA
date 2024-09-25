@@ -50,3 +50,47 @@ func SegregateOddEvenNodes(l SinglyLinkedList) SinglyLinkedList {
 
 	return l
 }
+
+func SegregateOddEvenNodes_1(l SinglyLinkedList) SinglyLinkedList {
+
+	curr := l.head
+
+	var EvenStart, EvenEnd, oddStart, OddEnd *NodeSingle
+
+	for curr != nil {
+
+		tempCurr := curr.next
+
+		if curr.data%2 == 0 {
+
+			if EvenStart == nil {
+				EvenStart, EvenEnd = curr, curr
+
+			} else {
+				EvenEnd.next = curr
+				EvenEnd = EvenEnd.next
+				EvenEnd.next = nil
+			}
+		} else {
+			if oddStart == nil {
+				oddStart, OddEnd = curr, curr
+			} else {
+				OddEnd.next = curr
+				OddEnd = OddEnd.next
+				OddEnd.next = nil
+			}
+		}
+
+		curr = tempCurr
+
+	}
+
+	if EvenStart != nil {
+		l.head = EvenStart
+		EvenEnd.next = oddStart
+	} else {
+		l.head = oddStart
+	}
+
+	return l
+}

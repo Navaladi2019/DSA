@@ -64,3 +64,56 @@ func finduionOfTwoArrays(arr1 []int, arr2 []int) []int {
 
 	return result
 }
+
+func FinduionOfTwoArrays_1(arr1 []int, arr2 []int) (res []int) {
+
+	i, j := 0, 0
+
+	if arr1[0] < arr2[0] {
+		res = append(res, arr1[0])
+		i++
+	} else {
+		res = append(res, arr2[0])
+		j++
+	}
+
+	for i < len(arr1) && j < len(arr2) {
+
+		if arr1[i] == res[len(res)-1] {
+			i++
+			continue
+		}
+		if arr2[j] == res[len(res)-1] {
+			j++
+			continue
+		}
+
+		if arr1[i] == arr2[j] {
+			res = append(res, arr1[i])
+			i++
+			j++
+		} else if arr1[i] < arr2[j] {
+			res = append(res, arr1[i])
+			i++
+		} else {
+			res = append(res, arr2[j])
+			j++
+		}
+	}
+
+	for i < len(arr1) {
+		if arr1[i] == res[len(res)-1] {
+			i++
+			continue
+		}
+	}
+
+	for j < len(arr2) {
+		if arr2[j] == res[len(res)-1] {
+			j++
+			continue
+		}
+	}
+
+	return
+}

@@ -19,7 +19,7 @@ var InsertionTcs = func() []InsertionTc {
 func Test_Insertion(t *testing.T) {
 	for _, tc := range InsertionTcs() {
 
-		got := FindInterSectionOdTwoSortedArray(tc.arr, tc.arr2)
+		got := FindInterSectionOdTwoSortedArray_1(tc.arr, tc.arr2)
 
 		for i, _ := range tc.res {
 			if tc.res[i] != got[i] {

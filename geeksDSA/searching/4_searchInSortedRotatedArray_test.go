@@ -23,7 +23,7 @@ var SearchInSOrtedRotatedtcs = func() []SearchInSOrtedRotatedtc {
 func Test_SearchInSOrtedRotatedtcs(t *testing.T) {
 	for _, tc := range SearchInSOrtedRotatedtcs() {
 
-		got := FindInSortedRoratedArray(tc.arr, tc.n)
+		got := FindInSortedRoratedArray_1(tc.arr, tc.n)
 
 		if tc.want != got {
 			t.Error("has error in sorted rortated array")

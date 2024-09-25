@@ -17,14 +17,16 @@ func DetectLoopInLLUsingDict(l *NodeSingle) bool {
 	return false
 }
 
+// here we are modifying the entrire LL once we visit the node we point the nodes next to dummy node,
+// so when a loop exists we will have a nodes next pointing to dummy node
 func DetectLoopInLLUsingPointerSwapping(l *NodeSingle) bool {
 
-	temp := &NodeSingle{}
+	dummynode := &NodeSingle{}
 
 	curr := l.next
 	for curr != nil {
 
-		if curr.next == temp || curr == temp {
+		if curr.next == dummynode || curr == dummynode {
 			return true
 		} else {
 
@@ -32,7 +34,7 @@ func DetectLoopInLLUsingPointerSwapping(l *NodeSingle) bool {
 
 			curr = curr.next
 
-			oldcur.next = temp
+			oldcur.next = dummynode
 		}
 	}
 
