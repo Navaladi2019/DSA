@@ -70,3 +70,24 @@ func FindLCA_Effficient(n *Node[int], n1 int, n2 int) *Node[int] {
 	return RLca
 
 }
+
+func FincLCA_Revision(n *Node[int], a int, b int) *Node[int] {
+
+	if n == nil || n.data == a || n.data == b {
+		return n
+	}
+
+	n1 := FincLCA_Revision(n.left, a, b)
+	n2 := FincLCA_Revision(n.right, a, b)
+
+	if n1 != nil && n2 != nil {
+		return n
+	}
+
+	if n1 != nil {
+		return n1
+	}
+
+	return n2
+
+}

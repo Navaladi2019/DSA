@@ -7,9 +7,9 @@ import (
 
 func Test_SortKSorted(t *testing.T) {
 
-	arr := SortKSorted([]int{9, 8, 7, 19, 18}, 2)
+	arr := SortKSorted_Efficient([]int{9, 8, 7, 19, 18}, 2)
 	fmt.Println(arr)
 
-	arr = SortKSorted([]int{10, 9, 7, 8, 4, 70, 50, 60}, 4)
+	arr = SortKSorted_Efficient([]int{10, 9, 7, 8, 4, 70, 50, 60}, 4)
 	fmt.Println(arr)
 }

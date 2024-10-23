@@ -76,3 +76,34 @@ func PairwiseSwap(N *NodeSingle) *NodeSingle {
 	return N
 
 }
+
+func PairWiseSwap_Easy(n *NodeSingle) *NodeSingle {
+
+	res := n.next
+
+	curr := n
+
+	var prevLink *NodeSingle
+
+	for curr != nil && curr.next != nil {
+
+		Second := curr.next
+		nextCurr := Second.next
+
+		Second.next = curr
+
+		if prevLink != nil {
+			prevLink.next = Second
+		}
+		prevLink = curr
+		curr = nextCurr
+	}
+
+	if curr != nil {
+		prevLink.next = curr
+	} else {
+		prevLink.next = nil
+	}
+
+	return res
+}

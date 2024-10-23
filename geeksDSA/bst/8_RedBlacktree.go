@@ -10,3 +10,5 @@ package bst
 
 // Number of nodes from a node to its farthest descendant leaf should not be more than twice than the
 // number of nodes on the path to its closest descendant leaf
+
+//https://www.scaler.com/topics/data-structures/red-black-tree/

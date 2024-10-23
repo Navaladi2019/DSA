@@ -13,16 +13,15 @@ func DetectLoopRecDirectedGraph(arr [][]int, visited []bool, resStack []bool, u 
 			}
 		}
 	}
-	resStack[u] = false
+
 	return false
 }
 
 func DetectLoopDirectedGrapg(arr [][]int) {
 	visited := make([]bool, len(arr))
-	recStack := make([]bool, len(arr))
 	for i, _ := range arr {
-
 		if visited[i] == false {
+			recStack := make([]bool, len(arr))
 			DetectLoopRecDirectedGraph(arr, visited, recStack, i)
 		}
 	}

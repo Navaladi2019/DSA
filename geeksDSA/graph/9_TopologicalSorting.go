@@ -7,8 +7,11 @@ import (
 	queue "github.com/Navaladi2019/GoRefresher/geeksDSA/Queue"
 )
 
-func SortItemInTopologicalOrderInDirectedGraph(arr [][]int) {
+// this uses Khans BFS based algorithm
+// Topological sorting will only work if there is no cycle
+func SortItemInTopologicalOrderInDirectedGraph(arr [][]int) []int {
 
+	toposort := make([]int, 0, len(arr))
 	edges := make([]int, len(arr))
 	for _, u := range arr {
 		for _, v := range u {
@@ -25,6 +28,7 @@ func SortItemInTopologicalOrderInDirectedGraph(arr [][]int) {
 	for !q.IsEmpty() {
 		v, _ := q.Dequeue()
 		fmt.Println(v)
+		toposort = append(toposort, v)
 		for _, val := range arr[v] {
 			edges[val] = edges[val] - 1
 			if edges[val] == 0 {
@@ -32,6 +36,8 @@ func SortItemInTopologicalOrderInDirectedGraph(arr [][]int) {
 			}
 		}
 	}
+
+	return toposort
 }
 
 func FilterSlicesGetIndex[T any](arr []T, filter func(ele T) bool) []int {

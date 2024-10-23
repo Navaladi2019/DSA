@@ -16,3 +16,25 @@ func Ceil(root *Node[int], val int) *int {
 		return Ceil(root.Right, val)
 	}
 }
+
+func Ceil_1(root *Node[int], val int) *int {
+
+	var res *int
+	curr := root
+	for curr != nil {
+
+		if curr.Value == val {
+			res = &curr.Value
+			break
+		} else if curr.Value < val {
+			curr = curr.Right
+		} else {
+			if res == nil || *(res) > curr.Value {
+				res = &curr.Value
+			}
+			curr = curr.Left
+		}
+
+	}
+	return res
+}

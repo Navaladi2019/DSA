@@ -30,28 +30,35 @@ func InsertRecursiveAVL[T Numbers](root *Node[T], val T) *Node[T] {
 	bf := getBalanceFactor(root)
 
 	// left left
-	if bf > 1 && val < root.Left.Value {
+	if bf > 1 && val < getNodeDefaultValue(root.Left) {
 		return RotateRight(root)
 	}
 
-	// right right
-	if bf < -1 && val > root.Right.Value {
+	//right right
+	if bf < -1 && val > getNodeDefaultValue(root.Right) {
 		return RotateLeft(root)
 	}
 
-	// left right
-	if bf > 1 && val > root.Right.Value {
-		root.Left = RotateLeft(root.Left)
+	// left Right
+	if bf > 1 && val > getNodeDefaultValue(root.Left) {
+		root.Left = RotateRight(root.Left)
 		return RotateRight(root)
 	}
 
-	// right left
-	if bf < -1 && val < root.Right.Value {
-		root.Right = RotateRight(root.Right)
+	//right left
+	if bf < -1 && val < getNodeDefaultValue(root.Right) {
+		root.Right = RotateLeft(root.Right)
 		return RotateLeft(root)
 	}
 
 	return root
+}
+
+func getNodeDefaultValue[T Numbers](n *Node[T]) T {
+	if n == nil {
+		return 0
+	}
+	return n.Value
 }
 
 func RotateLeft[T Numbers](root *Node[T]) *Node[T] {
@@ -62,10 +69,8 @@ func RotateLeft[T Numbers](root *Node[T]) *Node[T] {
 	temp := nextRoot.Left
 	nextRoot.Left = root
 	root.Right = temp
-
-	root.height = max(height(root.Left), height(root.Right)) + 1
-	nextRoot.height = max(height(root.Left), height(root.Right)) + 1
-
+	root.height = max(height(root.Left), height(root.Right))
+	nextRoot.height = max(height(nextRoot.Left), height(nextRoot.Right))
 	return nextRoot
 }
 
@@ -74,12 +79,11 @@ func RotateRight[T Numbers](root *Node[T]) *Node[T] {
 		return root
 	}
 	nextRoot := root.Left
-	temp := nextRoot.Right
+	tempRight := nextRoot.Right
 	nextRoot.Right = root
-	root.Left = temp
-
-	root.height = max(height(root.Left), height(root.Right)) + 1
-	nextRoot.height = max(height(root.Left), height(root.Right)) + 1
+	root.Left = tempRight
+	root.height = max(height(root.Left), height(root.Right))
+	nextRoot.height = max(height(nextRoot.Left), height(nextRoot.Right))
 	return nextRoot
 }
 

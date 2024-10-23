@@ -44,3 +44,39 @@ func DijkstraAlgo(graph Graph) {
 
 	fmt.Println(distance)
 }
+
+func DijkstraAlgo1(graph Graph, s int) {
+
+	finalized := make([]bool, len(graph))
+
+	distance := make([]int, len(graph))
+
+	for i := 0; i < len(graph); i++ {
+		if i != s {
+			distance[i] = math.MaxInt
+		}
+	}
+
+	distance[s] = 0
+
+	for i := 0; i < len(distance); i++ {
+
+		indextobeFinalized := -1
+		mindistance := math.MaxInt
+		for j := 0; j < len(graph); j++ {
+			if finalized[j] == false && distance[j] < mindistance {
+				indextobeFinalized = j
+				mindistance = distance[j]
+			}
+		}
+		finalized[indextobeFinalized] = true
+		for k := 0; k < len(graph); k++ {
+			if finalized[k] == false && graph[indextobeFinalized][k] > 0 {
+				distance[k] = min(distance[k], distance[indextobeFinalized]+graph[indextobeFinalized][k])
+			}
+		}
+	}
+
+	fmt.Println(distance)
+
+}

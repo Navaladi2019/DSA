@@ -42,14 +42,12 @@ func DetectCycleInUndirectedGraphBFS(arr [][]int) {
 	}
 
 }
-func DFSDetectCycleRec(arr [][]int, u int, visited []bool, parent int) bool {
+func DFSDetectCycleRecUndirectedGraph(arr [][]int, u int, visited []bool, parent int) bool {
 
 	visited[u] = true
 	for _, v := range arr[u] {
 		if visited[v] == false {
-			if DFSDetectCycleRec(arr, v, visited, u) == true {
-				return true
-			}
+			return DFSDetectCycleRecUndirectedGraph(arr, v, visited, u)
 		} else if v != parent {
 			fmt.Println("has loop found at", u, v, "has already parent of", parent)
 			return true
@@ -62,5 +60,11 @@ func DFSDetectCycleRec(arr [][]int, u int, visited []bool, parent int) bool {
 func DFS_DetectCycle(arr [][]int, u int) {
 
 	visited := make([]bool, len(arr))
-	DFSDetectCycleRec(arr, 0, visited, -1)
+
+	for i := 0; i < len(arr); i++ {
+		if visited[u] == false {
+			DFSDetectCycleRecUndirectedGraph(arr, i, visited, -1)
+		}
+	}
+
 }

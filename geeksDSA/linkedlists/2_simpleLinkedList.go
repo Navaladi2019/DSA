@@ -9,6 +9,12 @@ type NodeSingle struct {
 	next *NodeSingle
 }
 
+type NodeSingleRandom struct {
+	data   int
+	next   *NodeSingleRandom
+	random *NodeSingleRandom
+}
+
 func (n *NodeSingle) Init(info int) {
 	n.data = info
 }

@@ -6,7 +6,7 @@ import "testing"
 func Test_PairwiseSwaP(t *testing.T) {
 
 	l := SinglyLinkedList{}
-	l.Insert(1, 2, 3, 4, 5, 6, 7)
-	o := PairwiseSwap(l.head)
+	l.Insert(1, 2, 3, 4, 5, 6)
+	o := PairWiseSwap_Easy(l.head)
 	RecursiveLinkedList(o)
 }

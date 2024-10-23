@@ -20,3 +20,21 @@ func SortKSorted(arr []int, k int) []int {
 	}
 	return arr
 }
+
+func SortKSorted_Efficient(arr []int, k int) []int {
+	newList := make([]int, k+1, k+1)
+	copy(newList, arr[0:k+1])
+	q := MinHeap{}
+	q.Init(newList)
+	j := k
+	for i := 0; i < len(arr); i++ {
+		_, val := q.Extract()
+		arr[i] = val
+		j++
+		if j < len(arr) {
+			q.Insert(arr[j])
+		}
+	}
+
+	return arr
+}

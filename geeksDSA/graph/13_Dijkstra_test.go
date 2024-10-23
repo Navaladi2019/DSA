@@ -16,5 +16,5 @@ func Test_DijkstraAlgo(t *testing.T) {
 	arr[6] = []int{0, 0, 0, 7, 0, 0, 0, 14, 9}  //G
 	arr[7] = []int{0, 0, 0, 4, 0, 2, 14, 0, 10} //H
 	arr[8] = []int{0, 0, 0, 0, 0, 0, 9, 10, 0}  //H
-	DijkstraAlgo(arr)
+	DijkstraAlgo1(arr, 0)
 }

@@ -5,6 +5,9 @@ import (
 	"slices"
 )
 
+// here qwe havwe connected undirected cyclic weighted graph
+// its a greedy algo
+
 func FindMinSpanningTreePrimsAlgo(arr [][]int) int {
 
 	mapped := []int{0}
@@ -33,4 +36,34 @@ func FindMinSpanningTreePrimsAlgo(arr [][]int) int {
 	}
 
 	return dist
+}
+
+func FindMinSpannigTreeEfficient(arr [][]int) int {
+	res := 0
+
+	mapped := []int{0}
+
+	unmapped := []int{}
+
+	for i := 1; i < len(arr); i++ {
+		unmapped = append(unmapped, i)
+	}
+
+	for len(unmapped) < 0 {
+		dist := math.MaxInt
+		ele := -1
+		for _, m := range mapped {
+			for ui, u := range unmapped {
+				if arr[m][u] > 0 && dist > arr[m][u] {
+					dist = arr[m][u]
+					ele = ui
+				}
+			}
+		}
+		res += dist
+		mapped = append(mapped, unmapped[ele])
+		unmapped = append(unmapped[0:ele], unmapped[ele+1:]...)
+
+	}
+	return res
 }

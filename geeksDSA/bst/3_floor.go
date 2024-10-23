@@ -47,3 +47,19 @@ func Floor_iterative(root *Node[int], val int) *int {
 
 	return res
 }
+
+func Floor_iterative1(root *Node[int], val int) *int {
+	var res *int
+	curr := root
+	for curr != nil {
+		if curr.Value == val {
+			return &curr.Value
+		} else if curr.Value < val {
+			res = &curr.Value
+			curr = curr.Right
+		} else {
+			curr = curr.Left
+		}
+	}
+	return res
+}

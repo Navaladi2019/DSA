@@ -4,5 +4,5 @@
 -- social newtworking search
 -- In garnage collection
 -- cycle detection
--- Ford Fulkerson algorithm
+-- Ford Fulkerson algorithm(max flow algorithm)
 -- broadcasting
