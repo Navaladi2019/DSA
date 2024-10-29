@@ -4,7 +4,6 @@ import "sort"
 
 type Heap struct {
 	sort.Interface
-
 	arr []int
 }
 
