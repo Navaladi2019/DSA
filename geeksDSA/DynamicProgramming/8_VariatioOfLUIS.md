@@ -1,0 +1,3 @@
+- minimum deletions to make an array sorted [5,10,3,6,7,8] longest sub sequence is 5,6,7,8 so delete 10,3
+- maximum sum increasing subsequence
+- maximum length bitonic subsequence
