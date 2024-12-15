@@ -20,7 +20,7 @@ func Test_MaxDiffArrayTcs(t *testing.T) {
 
 	for _, tc := range MaxDiffArrayTcs() {
 
-		got := findMaximunDifferenceArray(tc.ip)
+		got := FinDmAximunDifference(tc.ip)
 
 		if got != tc.want {
 			t.Error("has error")

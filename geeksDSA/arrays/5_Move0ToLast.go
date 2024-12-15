@@ -31,3 +31,16 @@ func MoveZeroToLast_1(arr []int) []int {
 
 	return arr
 }
+
+func MoveZeroToLast_2(arr []int) {
+
+	lastNonZeroIndex := -1
+
+	for i := 0; i < len(arr); i++ {
+		if arr[i] != 0 {
+			arr[lastNonZeroIndex+1], arr[i] = arr[i], arr[lastNonZeroIndex+1]
+			lastNonZeroIndex++
+		}
+
+	}
+}

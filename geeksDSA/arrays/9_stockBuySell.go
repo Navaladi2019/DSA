@@ -29,13 +29,10 @@ func FindStockProfit(arr []int) int {
 
 	lastLowVal := arr[0]
 
-	for i := 0; i < len(arr); i++ {
-
+	for i := 1; i < len(arr); i++ {
 		if arr[i] < lastLowVal {
 			lastLowVal = arr[i]
-		}
-
-		if arr[i] > lastLowVal {
+		} else {
 			profit = profit + arr[i] - lastLowVal
 			lastLowVal = arr[i]
 		}

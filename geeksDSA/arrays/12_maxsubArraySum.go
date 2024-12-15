@@ -55,6 +55,8 @@ func findMaximunSubarrayNavive(arr []int) int {
 
 // max sum of sub array formula max[i] = max(max(i-1)+arr[i],arr[i])
 
+// here we find the max sum ending with the arraty
+
 func getMaxSumOfSubArray(arr []int) int {
 
 	maxSum := arr[0]

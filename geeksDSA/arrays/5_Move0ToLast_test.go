@@ -20,7 +20,7 @@ func Test_MoveSeroToLastTcs(t *testing.T) {
 
 	for _, tc := range MoveSeroToLastTcs() {
 
-		MoveZeroToLast_1(tc.arr1)
+		MoveZeroToLast_2(tc.arr1)
 
 		for i := 0; i < len(tc.arr2); i++ {
 			if tc.arr1[i] != tc.arr2[i] {

@@ -12,3 +12,19 @@ func findMaximunDifferenceArray(arr []int) int {
 
 	return maxdifference
 }
+
+func FinDmAximunDifference(arr []int) int {
+
+	i := 0
+
+	diff := arr[1] - arr[0]
+
+	for j := 1; j < len(arr); j++ {
+		diff = max(diff, arr[j]-arr[i])
+		if arr[j] < arr[i] {
+			i = j
+		}
+	}
+
+	return diff
+}

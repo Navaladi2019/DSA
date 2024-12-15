@@ -70,3 +70,38 @@ func FindInSortedRoratedArray_1(arr []int, n int) int {
 
 	return -1
 }
+
+func FindInSortedRotatedArray_2(arr []int, n int) int {
+
+	low := 0
+	high := len(arr) - 1
+
+	for low <= high {
+
+		mid := (low + high) / 2
+
+		if (arr[mid]) == n {
+			return mid
+		} else {
+			//leftsorted
+			if arr[low] <= arr[mid] {
+				if arr[low] <= n && arr[mid] > n {
+					high = mid - 1
+				} else {
+					low = mid + 1
+				}
+			} else {
+				// right is sorted
+
+				if arr[mid] < n && arr[high] >= n {
+					low = mid + 1
+				} else {
+					high = mid - 1
+				}
+
+			}
+		}
+	}
+
+	return -1
+}
