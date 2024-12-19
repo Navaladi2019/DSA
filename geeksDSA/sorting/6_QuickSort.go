@@ -2,10 +2,13 @@ package sorting
 
 func QuickSortUsingLomutoPartition(arr []int, low int, high int) {
 
+REC:
 	if low < high {
 		p := Lomuto_partition(arr, low, high)
 		QuickSortUsingLomutoPartition(arr, low, p-1)
-		QuickSortUsingLomutoPartition(arr, p+1, high)
+		low = p + 1
+		goto REC
+		//QuickSortUsingLomutoPartition(arr, p+1, high)
 	}
 }
 

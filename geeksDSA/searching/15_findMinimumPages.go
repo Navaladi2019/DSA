@@ -56,3 +56,28 @@ func FindMinimumPages_Loop(arr []int, k int) int {
 	return res
 
 }
+
+func FindMinimumPages_1(arr []int, k int) int {
+
+	if k == 1 {
+		return SumFromINdex(arr, 0, len(arr))
+	}
+
+	if k == 0 {
+		return 0
+	}
+
+	if len((arr)) == 0 {
+		return 0
+	}
+
+	res := 0
+
+	for i := 0; i < len(arr); i++ {
+
+		res = min(SumFromINdex(arr, 0, i), FindMinimumPages(arr[i:], k-1))
+
+	}
+
+	return res
+}

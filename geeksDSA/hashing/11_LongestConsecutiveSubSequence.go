@@ -12,6 +12,10 @@ func LongestSubSequence(arr []int) int {
 	for i := 0; i < len(arr); i++ {
 		curr := 1
 		ele := arr[i]
+		if _, ok := (dict[ele-1]); ok {
+			// here we are continuing because we have already considered the previous element as subsequence
+			continue
+		}
 		for {
 
 			if _, ok := dict[ele+1]; ok {
@@ -28,3 +32,5 @@ func LongestSubSequence(arr []int) int {
 
 	return res
 }
+
+// here we did 2n look up

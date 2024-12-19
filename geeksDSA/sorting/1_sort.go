@@ -91,6 +91,8 @@ func MergerTwoSortedSort(arr1 []int, arr2 []int) []int {
 	return result
 }
 
+// mid := l + (r-l)/2 this is done to reduce the integer overflow thats it and nothng much
+
 func MergeSort(arr []int, l int, r int) {
 
 	if l < r {
