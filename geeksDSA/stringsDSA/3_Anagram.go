@@ -43,3 +43,5 @@ func isAnagram_Dict(str1 string, str2 string) bool {
 
 	return true
 }
+
+// here instead of dict we can use char array of 256

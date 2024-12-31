@@ -63,3 +63,28 @@ func Floor_iterative1(root *Node[int], val int) *int {
 	}
 	return res
 }
+
+func FloorRecursion(root *Node[int], val int) *Node[int] {
+
+	if root == nil {
+		return nil
+	}
+
+	if root.Value == val {
+		return root
+	} else if root.Value > val {
+		return FloorRecursion(root.Left, val)
+	} else {
+
+		if root.Right == nil {
+			return root
+		}
+
+		nextPossible := FloorRecursion(root.Right, val)
+
+		if nextPossible != nil && nextPossible.Value > root.Value {
+			return nextPossible
+		}
+		return root
+	}
+}

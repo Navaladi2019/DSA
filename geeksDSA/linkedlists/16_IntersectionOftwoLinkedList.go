@@ -88,3 +88,38 @@ func FindIntersectionOfTwoLinkedList_1(l1 SinglyLinkedList, l2 SinglyLinkedList)
 	return nil
 
 }
+
+func FindINtersection_Efficient(l1 SinglyLinkedList, l2 SinglyLinkedList) *NodeSingle {
+
+	acount := 0
+
+	for curr := l1.head; curr != nil; curr = curr.next {
+		acount++
+	}
+
+	Bcount := 0
+
+	for curr := l2.head; curr != nil; curr = curr.next {
+		Bcount++
+	}
+
+	acur := l1.head
+	bcur := l2.head
+
+	for acur != nil && bcur != nil {
+		if acur == bcur {
+			return acur
+		}
+
+		if acount >= Bcount {
+			acount--
+			acur = acur.next
+		} else {
+			Bcount--
+			bcur = bcur.next
+		}
+
+	}
+
+	return nil
+}

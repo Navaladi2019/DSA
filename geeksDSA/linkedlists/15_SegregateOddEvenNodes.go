@@ -94,3 +94,46 @@ func SegregateOddEvenNodes_1(l SinglyLinkedList) SinglyLinkedList {
 
 	return l
 }
+
+func SegregateOddEvenNodes_Efficient(l SinglyLinkedList) SinglyLinkedList {
+
+	var os, oe, es, ee *NodeSingle
+
+	curr := l.head
+
+	for curr != nil {
+		tempnext := curr.next
+		if curr.data%2 == 0 {
+			if es == nil {
+				es, ee = curr, curr
+			} else {
+				ee.next = curr
+				ee = ee.next
+			}
+
+			ee.next = os
+		} else {
+			if os == nil {
+				os = curr
+				oe = curr
+			} else {
+				oe.next = curr
+				oe = oe.next
+			}
+
+			oe.next = nil
+		}
+
+		curr = tempnext
+
+	}
+
+	if es != nil {
+		ee.next = os
+		l.head = es
+	} else {
+		l.head = os
+	}
+
+	return l
+}

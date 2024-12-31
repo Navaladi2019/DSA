@@ -152,3 +152,17 @@ func (l *SinglyLinkedList) InsertSortedWay(val int) {
 	}
 
 }
+
+func (l *SinglyLinkedList) Reverse() {
+
+	curr := l.head
+	var prev *NodeSingle
+	for curr != nil {
+		tempnext := curr.next
+		curr.next = prev
+		prev = curr
+		curr = tempnext
+
+	}
+	l.head = prev
+}

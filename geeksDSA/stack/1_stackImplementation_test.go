@@ -13,7 +13,8 @@ func Test_ArrStack(t *testing.T) {
 	arrSta.Push(2)
 
 	fmt.Println(arrSta.data)
-	AnotherMethod(&arrSta)
+	p := &arrSta
+	AnotherMethod(p)
 
 	fmt.Println(arrSta.data)
 }

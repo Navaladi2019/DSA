@@ -21,7 +21,7 @@ func Test_FindIntersectionOfTwoLinkedList(t *testing.T) {
 
 	nn := &NodeSingle{data: 1, next: &NodeSingle{data: 2, next: h4}}
 
-	node := FindIntersectionOfTwoLinkedList_1(SinglyLinkedList{head: h}, SinglyLinkedList{head: nn})
+	node := FindINtersection_Efficient(SinglyLinkedList{head: h}, SinglyLinkedList{head: nn})
 
 	if node != h4 {
 		t.Error("has error in finding intersection of LL")

@@ -19,20 +19,20 @@ func IsBalancedTree_Efficient(n *Node[int]) int {
 		return 0
 	}
 
-	lv := IsBalancedTree_Efficient(n.left)
+	leftHeight := IsBalancedTree_Efficient(n.left)
 
-	if lv == -1 {
+	if leftHeight == -1 {
 		return -1
 	}
-	rv := IsBalancedTree_Efficient(n.right)
+	rightHeight := IsBalancedTree_Efficient(n.right)
 
-	if rv == -1 {
-		return -1
-	}
-
-	if math.Abs(float64(lv-rv)) > 1 {
+	if rightHeight == -1 {
 		return -1
 	}
 
-	return max(lv, rv)
+	if math.Abs(float64(leftHeight-rightHeight)) > 1 {
+		return -1
+	}
+
+	return max(leftHeight, rightHeight)
 }
