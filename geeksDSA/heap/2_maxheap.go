@@ -13,6 +13,7 @@ func (h *MaxHeap) Insert(val int) {
 		if h.arr[h.parent(i)] < h.arr[i] {
 			h.arr[h.parent(i)], h.arr[i] = h.arr[i], h.arr[h.parent(i)]
 		}
+
 		i = h.parent(i)
 	}
 }
