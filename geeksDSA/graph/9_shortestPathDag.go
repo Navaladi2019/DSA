@@ -7,6 +7,9 @@ import (
 	queue "github.com/Navaladi2019/GoRefresher/geeksDSA/Queue"
 )
 
+// it will now work for negative weights
+// shortest path will change when we add weight to all edges
+
 func GetShortestPathDag(arr [][]int, s int) {
 
 	q := queue.ArrQueue[int]{}

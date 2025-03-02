@@ -1,7 +1,7 @@
 package dynamicprogramming
 
-// conside tyhe array [3,4,2,8,10,5,1] for ths the longes sub sequence is [3,4,8,10]
-// because here by having 3 we do not consider numbers less than tha
+// consider the array [3,4,2,8,10,5,1] for ths the longes sub sequence is [3,4,8,10]
+// because here by having 3 we do not consider numbers less than that
 
 //[3],[3,4],[3,4,8],[3,4,8,10],[3,5],[3,8,10],[3,8],[3,10] so for each index we will be computing the subsequence
 

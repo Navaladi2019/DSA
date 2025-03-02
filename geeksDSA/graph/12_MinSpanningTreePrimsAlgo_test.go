@@ -13,7 +13,7 @@ func Test_FindMinSpanningTreePrimsAlgo(t *testing.T) {
 	arr = append(arr, []int{8, 10, 0, 20})
 	arr = append(arr, []int{0, 15, 20, 0})
 
-	got := FindMinSpanningTreePrimsAlgo(arr)
+	got := FindMinSpannigTreeEfficient(arr)
 
 	if got != 28 {
 		t.Error("ahs error ")
@@ -27,7 +27,7 @@ func Test_FindMinSpanningTreePrimsAlgo(t *testing.T) {
 	arr = append(arr, []int{6, 8, 0, 0, 9})
 	arr = append(arr, []int{0, 5, 7, 9, 0})
 
-	got = FindMinSpanningTreePrimsAlgo(arr)
+	got = FindMinSpannigTreeEfficient(arr)
 
 	if got != 16 {
 		t.Error("ahs error ")

@@ -23,6 +23,9 @@ func DijkstraAlgo(graph Graph) {
 
 		minindex := -1
 		mindiatance := math.MaxInt
+
+		// here i can get min distance and increase by o(log v) by keeping it in minheap
+
 		for j := 0; j < len(isFinalized); j++ {
 			if isFinalized[j] == false && distance[j] < mindiatance {
 				mindiatance = distance[j]

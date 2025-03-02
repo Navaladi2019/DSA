@@ -1,4 +1,4 @@
--- shortest patyh in an unweighted graph
+-- shortest path in an ** unweighted ** graph
 -- crawlers in search engine
 -- peer to peer network
 -- social newtworking search
