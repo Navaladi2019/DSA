@@ -33,6 +33,8 @@
 | Technique | Description | Solves/Applies To | Example Problems |
 |-----------|-------------|-------------------|------------------|
 | Two-Pointer | Use two indices to process data efficiently | Finding pairs, reversing, sorting, merging. Efficiently iterating through arrays/strings. | Pair Sum, Dutch Flag |
+| subsets | Usefult to find subsets| creating subset of n array 2^n | find sum of subsets equal to sum|
+|Permutation|Find how to create permutation  n!|||
 | Sliding Window | Optimize subarray problems using a window | Finding subarrays/substrings with specific properties (max/min sum, unique chars). Efficient for continuous data. | Longest Substring w/o Repeats |
 | Kadane’s Algorithm | Max sum of contiguous subarray | Finding the maximum sum of a contiguous subarray. Used in financial analysis, signal processing. | Maximum Subarray Sum |
 | Prefix Sum | Efficient range sum computation | Efficiently calculating sums of subarrays/submatrices. Used in image processing, data analysis. | Range Sum Query |
