@@ -160,4 +160,8 @@
 
 ---
 
-📌 **Plan:** Focus on understanding concepts, implementing algorithms, and solving problems on LeetCode, CodeForces, or GeeksforGeeks for each topic. 🚀
+** Fast Slow Pointer **
+
+In fast slow pointer slow moves one position at a time and fast moves two position at a time. when both fast and slow meets then there is a cycle. Once slow and fast meets, reset the slow pointer to startig and move both slow and fast at speed of 1, now at whatever the element slow and fast meets is the point where the cycle happens.
+
+With the above code we can use it to find loop,detect cycle, remove cycle etc..
