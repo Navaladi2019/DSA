@@ -59,7 +59,7 @@
 
 | Technique | Description | Solves/Applies To | Example Problems |
 |-----------|-------------|-------------------|------------------|
-| Slow & Fast Pointers | Detect cycles | Finding cycles in linked lists, finding the middle element. Used in memory management, garbage collection. | Floyd’s Cycle Detection |
+| [Slow & Fast Pointers](#fast-slow-pointer) | Detect cycles | Finding cycles in linked lists, finding the middle element. Used in memory management, garbage collection. | Floyd’s Cycle Detection |
 | Merge & Reverse | Linked list manipulation | Merging sorted lists, reversing lists. Used in sorting algorithms, memory management. | Merge Sorted Lists, Reverse k-groups |
 | LRU Cache | Implement caching using DLL+HashMap | Implementing a Least Recently Used (LRU) cache. Used in web servers, databases. | LRU Cache |
 | **Intersection of Two Linked Lists** | Find the intersection node of two linked lists. | Finding common nodes between two lists. Used in database systems, memory management. | Intersection of Two Linked Lists |
@@ -160,7 +160,7 @@
 
 ---
 
-**Fast Slow Pointer**
+<a id="fast-slow-pointer"></a>**Fast Slow Pointer**
 
 In fast slow pointer slow moves one position at a time and fast moves two position at a time. when both fast and slow meets then there is a cycle. Once slow and fast meets, reset the slow pointer to startig and move both slow and fast at speed of 1, now at whatever the element slow and fast meets is the point where the cycle happens.
 
