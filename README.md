@@ -163,7 +163,12 @@
 <a id="fast-slow-pointer"></a>**Fast Slow Pointer**
 
 In fast slow pointer slow moves one position at a time and fast moves two position at a time. when both fast and slow meets then there is a cycle. Once slow and fast meets, reset the slow pointer to startig and move both slow and fast at speed of 1, now at whatever the element slow and fast meets is the point where the cycle happens.
-
 With the above code we can use it to find loop,detect cycle, remove cycle etc..
 
+---
+
+
+<a id="lomuto-partition"></a>**Lomuto Partition**
+
+Lomuto partition is used in quick sort, and depend upon the element we take for partition sort can be o(nlogn) in wrost case it could be o(n^2). Lomuto partition puts the partition element in its correct place. Always take partition element as last index and styarting from start,  if element < partition then swap(i,partitionIndex) partitionIndex++ else continue , once every thing is over 
 ---
