@@ -168,8 +168,10 @@ With the above code we can use it to find loop,detect cycle, remove cycle etc..
 ---
 
 
-<a id="lomuto-partition"></a> **Lomuto Partition**
+<a id="lomuto-partition"></a> 
 
+**Lomuto Partition**
 
-Lomuto partition is used in quick sort, and depend upon the element we take for partition sort can be o(nlogn) in wrost case it could be o(n^2). Lomuto partition puts the partition element in its correct place. Always take partition element as last index and styarting from start,  if element < partition then swap(i,partitionIndex) partitionIndex++ else continue , once every thing is over 
+Lomuto partition is used in quick sort, and depend upon the element we take for partition sort can be o(nlogn) in wrost case it could be o(n^2). Lomuto partition puts the partition element in its correct place. Always take partition element as last index and styarting from start,  if element < partition then swap(i,partitionIndex) partitionIndex++ else continue , once every thing is over.
+
 ---
