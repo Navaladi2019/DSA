@@ -189,16 +189,44 @@ low = low-1 and high = high+1
 
 for {
 
- do low++ while(arr[low+1) >p)
+ do low++ while(arr[low) >p)
 
  do high-- while (arr[high] <p)
 swap(low,high,arr)
 if(low >=high){
-
 return high;
-
 }
 }
 ```
+
+---
+<a id="dutch-flag"></a> **Dutch Flag Algorithm**
+
+Dutch flag algorithm in used to partition three types of element.here low is low end and mid is mid end and high is high start. low to mid is range where we will have 1
+
+```
+low =0
+mid =0
+
+for mid <= high{
+
+if(arr[mid] ==0){
+ swap(low,mid)
+low++
+mid++
+}
+if(arr[mid]==1){
+mid++
+}
+
+if(arr[mid] ==2{
+swap(mid,high)
+high--
+}
+
+}
+
+```
+.
 
 ---
