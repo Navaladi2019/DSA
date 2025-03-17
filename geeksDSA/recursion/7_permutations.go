@@ -1,6 +1,8 @@
 package recursion
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func PrintAllPermutations(str string, prefix string, res *[]string) {
 
@@ -47,6 +49,19 @@ func PrintAllPermutations_Efficient(str []string, i int, res *[]string) {
 	for j := i; j < len(str); j++ {
 		str[i], str[j] = str[j], str[i]
 		PrintAllPermutations_Efficient(str, i+1, res)
+		str[i], str[j] = str[j], str[i]
+	}
+}
+
+func Permutation(str []rune, i int) {
+
+	if i == len(str) {
+		fmt.Println(string(str))
+		return
+	}
+	for j := i; j < len(str); j++ {
+		str[i], str[j] = str[j], str[i]
+		Permutation(str, i+1)
 		str[i], str[j] = str[j], str[i]
 	}
 }

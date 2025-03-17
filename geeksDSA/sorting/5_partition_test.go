@@ -21,7 +21,7 @@ func TestHoaresPartition(t *testing.T) {
 	for _, test := range tests {
 		arr := make([]int, len(test.input))
 		copy(arr, test.input)
-		pivotIndex := Hoares_Partition(arr, test.low, test.high)
+		pivotIndex := Hoares_Partition_1(arr, test.low, test.high)
 		if pivotIndex != test.expected {
 			t.Errorf("For input %v and range [%d, %d], expected pivot index %d, but got %d", test.input, test.low, test.high, test.expected, pivotIndex)
 		}

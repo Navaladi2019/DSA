@@ -65,3 +65,14 @@ func GenerateSubSetsRevision(str string, curr string, n int) {
 	GenerateSubSetsRevision(str, curr, n+1)
 
 }
+
+func FindSubSetsRevison_1(str string, curr string, i int) {
+
+	if i == len(str) {
+		fmt.Println(curr)
+		return
+	}
+	FindSubSetsRevison_1(str, curr, i+1)
+	FindSubSetsRevison_1(str, curr+string(str[i]), i+1)
+
+}

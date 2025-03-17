@@ -56,3 +56,35 @@ func Hoares_Partition(arr []int, low int, high int) int {
 	}
 
 }
+
+func Hoares_Partition_1(arr []int, low int, high int) int {
+
+	if len(arr) == 0 {
+		return -1
+	}
+	pivot := arr[low]
+
+	i := low
+	j := high
+
+	for i <= j {
+
+		// below is do whle loop in golang
+		for arr[i] < pivot {
+			i++
+		}
+
+		for arr[j] > pivot {
+			j--
+		}
+
+		if i <= j {
+			arr[i], arr[j] = arr[j], arr[i]
+			i++
+			j--
+		}
+
+	}
+
+	return j
+}

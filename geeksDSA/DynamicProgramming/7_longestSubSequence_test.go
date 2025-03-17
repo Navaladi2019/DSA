@@ -7,6 +7,8 @@ import "testing"
 
 //[3],[3,4],[3,4,8],[3,4,8,10],[3,5],[3,8,10],[3,8],[3,10] so for each index we will be computing the subsequence
 
+//3,4,5,12,15,17,17
+
 func Test_LongestSubsequence(t *testing.T) {
 
 	got := LongestSubsequence([]int{3, 4, 2, 8, 10, 5, 1})

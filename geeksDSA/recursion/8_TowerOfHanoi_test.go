@@ -5,5 +5,5 @@ import (
 )
 
 func Test_TOH(t *testing.T) {
-	TOH(4, 'A', 'B', 'C')
+	TOH(3, 'A', 'B', 'C')
 }
