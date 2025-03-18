@@ -46,6 +46,35 @@ func main() {
 
 ```
 
+- (~) Not operator in golang its is (^num) for two numbers ^ is XOR (5 ^3)
+![alt text](image-2.png)
+```
+
+// You can edit this code!
+// Click here and start typing.
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println(^13)
+	fmt.Println(^-13)
+
+	fmt.Println(^1000)
+	fmt.Println(^-1000)
+
+}
+
+```
+
+
+
+
 to convert a number to negative takes 1'1 complement add 1 to it thats all, you get negative of it.
 
 first bit tells us if its a negative of positive number, 1 at 0 index tells us negative and 0 at 0 ondex tells us its positive.
+
+**one two compelemnt**
+![alt text](image-1.png)
