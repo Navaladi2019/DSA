@@ -76,3 +76,14 @@ func FindSubSetsRevison_1(str string, curr string, i int) {
 	FindSubSetsRevison_1(str, curr+string(str[i]), i+1)
 
 }
+
+func CreateSubSets(str string, curr string, i int) {
+
+	if i == len(str) {
+		fmt.Println(curr)
+		return
+	}
+
+	CreateSubSets(str, curr, i+1)
+	CreateSubSets(str, curr+string(str[i]), i+1)
+}

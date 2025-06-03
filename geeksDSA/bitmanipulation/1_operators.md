@@ -45,7 +45,7 @@ func main() {
 }
 
 ```
-
+![alt text](image-5.png)
 - (~) Not operator in golang its is (^num) for two numbers ^ is XOR (5 ^3)
 ![alt text](image-2.png)
 ```
