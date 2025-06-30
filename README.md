@@ -38,7 +38,7 @@
 |[Lomuto Partition](#lomuto-partition)|used in quick sort|can be used to find top k elements||
 |[Hoares Partition](#hoares-partition)|used in quick sort|can be used to find top k elements. It is some what better than lomuto partition||
 | Sliding Window | Optimize subarray problems using a window | Finding subarrays/substrings with specific properties (max/min sum, unique chars). Efficient for continuous data. | Longest Substring w/o Repeats |
-| Kadane’s Algorithm | Max sum of contiguous subarray | Finding the maximum sum of a contiguous subarray. Used in financial analysis, signal processing. | Maximum Subarray Sum |
+| Kadane’s Algorithm | Max sum of contiguous subarray | Finding the maximum sum of a contiguous subarray. Used in financial analysis, signal processing. Variation is maximum sum of circular sub array | Maximum Subarray Sum |
 | Prefix Sum | Efficient range sum computation | Efficiently calculating sums of subarrays/submatrices. Used in image processing, data analysis. | Range Sum Query |
 | Binary Search | Search in sorted or rotated arrays | Finding elements in sorted data, optimizing search time. Used in database systems, search engines. | First/Last Occurrence, Peak Element |
 | KMP Algorithm | String pattern matching efficiently | Finding occurrences of a pattern in a string. Used in text editors, search engines, bioinformatics. | Substring Search |
