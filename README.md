@@ -4,25 +4,25 @@
 
 # DSA Study Plan (Daily Timetable & Interview Guide)
 
-## **📅 Week 1**
-- **Mar 2** → Arrays & Strings
-- **Mar 3** → Hashing
-- **Mar 4** → Linked Lists
+## **📅 Week 1  before  july 7**
+-  → Arrays & Strings
+-  → Hashing
+-  → Linked Lists
 
-## **📅 Week 2**
-- **Mar 9** → Stacks & Queues
-- **Mar 10** → Recursion & Backtracking
-- **Mar 11** → Binary Search
+## **📅 Week 2 before july 14**
+-  → Stacks & Queues
+- * → Recursion & Backtracking
+-  → Binary Search
 
-## **📅 Week 3**
-- **Mar 16** → Trees
-- **Mar 17** → Graphs
-- **Mar 18** → Dynamic Programming (DP)
+## **📅 Week 3  before July 21**
+-  → Trees
+-  → Graphs
+-  → Dynamic Programming (DP)
 
-## **📅 Week 4**
-- **Mar 23** → Bit Manipulation
-- **Mar 24** → Tries
-- **Mar 25** → Advanced Data Structures
+## **📅 Week 4  before july 28**
+-  → Bit Manipulation
+-  → Tries
+-  → Advanced Data Structures
 
 ---
 
