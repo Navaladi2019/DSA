@@ -27,3 +27,28 @@ func findSquareRoor(n int) int {
 
 	return 0
 }
+
+func findSquareRoot(n int) int {
+
+	low := 0
+	high := n
+
+	for low <= high {
+
+		mid := (low + high) / 2
+
+		if mid*mid == n {
+			return mid
+		} else if (mid-1)*(mid-1) <= n && mid*mid > n {
+			return mid - 1
+		} else if mid*mid > n {
+			high = mid - 1
+		} else {
+			low = mid + 1
+		}
+
+	}
+
+	return -1
+
+}

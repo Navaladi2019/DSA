@@ -21,7 +21,7 @@ func Test_consucutiveOnetcs(t *testing.T) {
 
 	for _, tc := range consucutiveOnetcs() {
 
-		got := findMaxConsecutiveOne(tc.ip)
+		got := FindMaxConsucitiveones(tc.ip)
 		if got != tc.want {
 			t.Error("has error")
 		}

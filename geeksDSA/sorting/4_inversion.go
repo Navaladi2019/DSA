@@ -55,6 +55,8 @@ func CountAndMerge(arr []int, low int, mid int, high int) int {
 			k++
 		} else {
 			arr[k] = rightArr[j]
+
+			// now arr[j] is smaller that all the arr2[i] right side so that forms inversion
 			result += len(leftArr) - i
 			j++
 			k++

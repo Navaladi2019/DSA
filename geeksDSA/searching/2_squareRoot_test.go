@@ -18,7 +18,7 @@ func Test_SquareRoot(t *testing.T) {
 
 	for _, tc := range squareRoottcs() {
 
-		got := findSquareRoor(tc.ip)
+		got := findSquareRoot(tc.ip)
 
 		if tc.op != got {
 			t.Error("has error")

@@ -19,6 +19,24 @@ func findMaxConsecutiveOne(arr []int) int {
 	return res
 }
 
+func FindMaxConsucitiveones(arr []int) int {
+
+	res := 0
+
+	curr := 0
+
+	for _, v := range arr {
+		if v == 1 {
+			curr++
+			res = max(res, curr)
+		} else {
+			curr = 0
+		}
+	}
+
+	return res
+}
+
 func Test_valueSematics() {
 
 }

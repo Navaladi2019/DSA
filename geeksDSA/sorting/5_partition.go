@@ -1,6 +1,6 @@
 package sorting
 
-/* in lomuto partition we consider the h to be last eleent otherwise we just swap it to be last*/
+/* in lomuto partition we consider the h to be last element otherwise we just swap it to be last*/
 func Lomuto_partition(arr []int, low int, high int) int {
 
 	pivot := arr[high]
@@ -38,7 +38,7 @@ func Hoares_Partition(arr []int, low int, high int) int {
 
 	for {
 
-		// below is do whle loop in golang
+		// below is do while loop in golang
 		for next := true; next; next = arr[i] < pivot {
 			i++
 		}

@@ -51,7 +51,7 @@ func Test_GetMaxSumofSubArray(t *testing.T) {
 func Test_GetMaxSumofSubArrayCircular(t *testing.T) {
 
 	for _, tc := range MaxSumofSubArrayCirculartcs() {
-		got := getMaxSumOfSubArray_Circular(tc.ip)
+		got := getMaxSumOfSubArray_Circular_Correct(tc.ip)
 
 		if got != tc.want {
 			t.Error("failed")

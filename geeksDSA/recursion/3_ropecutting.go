@@ -44,3 +44,31 @@ func find_MaximunCutsInRope_1(n int, a int, b int, c int) int {
 	return res
 
 }
+
+func find_MaximunCutsInRope_2(n int, a int, b int, c int) int {
+
+	if n == 0 {
+		return 0
+	}
+
+	if n < 0 {
+		return -1
+	}
+
+	if a == 0 && b == 0 && c == 0 {
+		return -1
+	}
+
+	res := max(
+		find_MaximunCutsInRope_2(n-a, a, b, c),
+		find_MaximunCutsInRope_2(n-b, a, b, c),
+		find_MaximunCutsInRope_2(n-c, a, b, c),
+	)
+
+	if res >= 0 {
+		return 1 + res
+	}
+
+	return -1
+
+}

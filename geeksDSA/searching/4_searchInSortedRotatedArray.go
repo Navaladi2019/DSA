@@ -105,3 +105,43 @@ func FindInSortedRotatedArray_2(arr []int, n int) int {
 
 	return -1
 }
+
+func FindInSortedRotatedArray(arr []int, n int) int {
+
+	l := 0
+	h := len(arr) - 1
+
+	for l <= h {
+
+		mid := (l + h) / 2
+
+		if arr[mid] == n {
+			return mid
+		}
+
+		if arr[l] <= arr[mid] {
+			//left half is sorted
+			// Now check if n is with in the range of low and mid
+			// if it is within the range then do binary with in that
+
+			if n >= arr[l] && n < arr[mid] {
+				h = mid - 1
+			} else {
+				l = mid + 1
+			}
+
+		} else {
+			//Right half is sorted
+			// Now check if n is with in the range of   mid and high
+			// if it is within the range then do binary with in that
+			if n > arr[mid] && n <= arr[h] {
+				l = mid + 1
+			} else {
+				h = mid - 1
+			}
+
+		}
+	}
+
+	return -1
+}

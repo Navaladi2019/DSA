@@ -96,3 +96,38 @@ func getMaxSumOfSubArray_Circular(arr []int) int {
 
 	return max(maxSubArraySum, maxSubArraySumCir)
 }
+
+func getMaxSumOfSubArray_Circular_Correct(arr []int) int {
+
+	maxval := getMaxSumOfSubArray(arr)
+
+	minval := getMinSumOfSubArray(arr)
+
+	if minval >= 0 {
+		return maxval
+	}
+
+	fullsum := 0
+
+	for i := 0; i < len(arr); i++ {
+		fullsum += arr[i]
+	}
+
+	return max(maxval, (fullsum - (minval)))
+
+}
+
+func getMinSumOfSubArray(arr []int) int {
+
+	res := arr[0]
+	curr := arr[0]
+
+	for i := 1; i < len(arr); i++ {
+
+		curr = min(curr+arr[i], arr[i])
+
+		res = min(curr, res)
+	}
+
+	return res
+}
