@@ -42,7 +42,7 @@
 | Prefix Sum | Efficient range sum computation | Efficiently calculating sums of subarrays/submatrices. Used in image processing, data analysis. | Range Sum Query |
 | Binary Search | Search in sorted or rotated arrays | Finding elements in sorted data, optimizing search time. Used in database systems, search engines. | First/Last Occurrence, Peak Element |
 | KMP Algorithm | String pattern matching efficiently | Finding occurrences of a pattern in a string. Used in text editors, search engines, bioinformatics. | Substring Search |
-| [**Dutch National Flag Problem** ](#dutch-flag)| Sort an array of 0s, 1s, and 2s in one pass. | Partitioning elements based on a pivot. Used in sorting algorithms, quicksort variations. | Sort Colors |
+| [**Dutch National Flag Problem** ](#dutch-flag)| Sort an array of 0s, 1s, and 2s in one pass. | Partitioning elements based on a pivot. Used in sorting algorithms, quicksort variations.If u know hoares algo then you can solve it using that. | Sort Colors |
 
 ---
 
