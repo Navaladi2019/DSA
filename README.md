@@ -51,6 +51,7 @@
 | Technique | Description | Solves/Applies To | Example Problems |
 |-----------|-------------|-------------------|------------------|
 | HashMap Usage | Fast lookups & frequency counting | Counting frequency of elements, checking for duplicates, grouping anagrams. Used in caching, database indexing. | Two Sum, Group Anagrams |
+|SubArry with Given Sum| Longest SubArray with given sum,WIth sum zero, Longest subarray with eaual 0 and 1s||
 | Rolling Hash | Efficient substring search | Finding patterns in strings, plagiarism detection. Used in text search, bioinformatics. | Rabin-Karp Algorithm |
 | Trie | Prefix tree for fast lookups | Auto-completion, spell checking, IP routing. Used in search engines, dictionaries. | AutoComplete, Word Search |
 | **Bloom Filter** | Probabilistic data structure for set membership testing. | Checking if an element is present in a set with a possibility of false positives. Used in network applications, caching, databases. | Implement Bloom Filter |
