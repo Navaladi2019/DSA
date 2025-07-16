@@ -4,7 +4,7 @@
 
 # DSA Study Plan (Daily Timetable & Interview Guide)
 
-## **📅 Week 1  before  july 7**
+## **📅 Week 1  before  july 20**
 -  → Arrays & Strings
 -  → Hashing
 -  → Linked Lists
