@@ -24,7 +24,7 @@ func Test_transposeMatrix(t *testing.T) {
 
 	for _, tc := range transposeTcs() {
 
-		FindTranspose(tc.mat)
+		FindTranspose_1(tc.mat)
 
 		for i := 0; i < len(tc.mat); i++ {
 			for j := 0; j < len(tc.mat[i]); j++ {

@@ -107,3 +107,50 @@ func PairWiseSwap_Easy(n *NodeSingle) *NodeSingle {
 
 	return res
 }
+
+func pairwiseRec(n *NodeSingle) *NodeSingle {
+
+	if n == nil || n.next == nil {
+		return n
+	}
+
+	curr := n.next
+
+	tempREcNext := curr.next
+
+	curr.next = n
+
+	curr.next.next = pairwiseRec(tempREcNext)
+
+	return curr
+
+}
+
+func pairwiseSwap_Changedata(h *NodeSingle) *NodeSingle {
+
+	curr := h
+
+	for curr != nil && curr.next != nil {
+
+		curr.data, curr.next.data = curr.next.data, curr.data
+
+		curr = curr.next.next
+	}
+
+	return h
+}
+
+func pairwiseSwap_Rec(h *NodeSingle) *NodeSingle {
+	if h == nil || h.next == nil {
+		return h
+	}
+
+	nextHead := h.next
+	tempNext := nextHead.next
+
+	nextHead.next = h
+
+	h.next = pairwiseSwap_Rec(tempNext)
+
+	return nextHead
+}

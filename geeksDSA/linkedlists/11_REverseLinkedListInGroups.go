@@ -30,10 +30,10 @@ func ReverseLinkedInGroup(n *NodeSingle, curperv *NodeSingle, k int) (*NodeSingl
 	prev := curperv
 
 	for i := 0; i < k && curr != nil; i++ {
-		tempCurr := curr.next
+		tempNext := curr.next
 		curr.next = prev
 		prev = curr
-		curr = tempCurr
+		curr = tempNext
 	}
 
 	return prev, curr

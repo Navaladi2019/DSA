@@ -45,3 +45,24 @@ func isAnagram_Dict(str1 string, str2 string) bool {
 }
 
 // here instead of dict we can use char array of 256
+
+func IsAnagram_SmallCase(str1 string, str2 string) bool {
+
+	arr := make([]int, 26)
+
+	for i := 0; i < len(str1); i++ {
+		arr[str1[i]-'a']++
+	}
+
+	for i := 0; i < len(str2); i++ {
+		arr[str2[i]-'a']--
+	}
+
+	for _, v := range arr {
+		if v != 0 {
+			return false
+		}
+	}
+
+	return true
+}

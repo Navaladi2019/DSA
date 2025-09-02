@@ -34,3 +34,37 @@ func BoundaryTraversal(mat [][]int) (arr []int) {
 
 	return arr
 }
+
+func BoundaryTraversal_1(mat [][]int) (arr []int) {
+
+	res := make([]int, 0, 10)
+
+	res = append(res, mat[0]...)
+
+	// if there is only single row in matrix no need to continue
+	if len(mat) == 1 {
+		return res
+	}
+
+	// append all right most column in all rows
+	for i := 1; i < len(mat); i++ {
+		res = append(res, mat[i][len(mat[i])-1])
+	}
+
+	// append all bottom most column of last row in reverse order
+	//  except the last column as its already appened by above code
+	for i := len(mat[0]) - 2; i >= 0; i-- {
+		res = append(res, mat[len(mat)-1][i])
+	}
+
+	// append only the left most column i all row except first and last row
+	// only if the colmn length is more than one
+	if len(mat[0]) > 1 {
+		for i := len(mat) - 2; i > 0; i-- {
+			res = append(res, mat[i][0])
+		}
+
+	}
+
+	return res
+}

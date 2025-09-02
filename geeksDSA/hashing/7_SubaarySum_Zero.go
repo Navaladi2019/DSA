@@ -27,7 +27,7 @@ func HasSubarraySumZero(arr []int) bool {
 
 // [5,8,6,13,3,-1]
 // [5,13,19,32,35,34] stored in dictionary but within the loop
-// 0 -> 0-16 => does not exist i++
+// 0 -> 0-16 => -16 does not exist i++
 // 1 -> 5-16 => -11 does not exist
 // 2 -> 13-16 => -3 does not exist
 // 3 -> 19 -16 => 3 does not exist

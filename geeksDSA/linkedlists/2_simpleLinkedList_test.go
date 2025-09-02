@@ -10,6 +10,7 @@ func Test_SimpleLinkedList(t *testing.T) {
 	LinkedListNaval1s := SinglyLinkedList{}
 
 	LinkedListNaval1s.Insert(10)
+	LinkedListNaval1s.DeleteLast_1()
 	LinkedListNaval1s.Insert(20)
 	LinkedListNaval1s.Insert(30)
 	LinkedListNaval1s.Insert(40)

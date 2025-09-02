@@ -20,7 +20,7 @@ func Test_SearchInSortedMatrix(t *testing.T) {
 
 	for _, tc := range SearchInSortedMatyricTcs() {
 
-		x, y := SearchInRowColumnSortedMatrix(tc.mat, tc.target)
+		x, y := SearchInRowColumnSortedMatrix_1(tc.mat, tc.target)
 
 		if x != tc.x && y != tc.y {
 			t.Error("has error in matrix sorting")

@@ -23,7 +23,7 @@ func Test_SnakePattern(t *testing.T) {
 
 	for _, tc := range SnakePatternTcs() {
 
-		got := GetArrayInSnakePattern(tc.mat)
+		got := GetArrayInSnakePattern_1(tc.mat)
 
 		for i := 0; i < len(tc.want); i++ {
 

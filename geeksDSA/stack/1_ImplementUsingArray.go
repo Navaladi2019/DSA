@@ -2,7 +2,7 @@ package stack
 
 // array implementation of stack is value type and not reference type
 // so when you pass the value to other and push it it would not be available
-type ArrStack[T comparable] struct {
+type ArrStack[T any] struct {
 	data []T
 }
 

@@ -33,6 +33,25 @@ func SortTwoTypesArray(arr []int, istype FnIsArrayType) {
 
 }
 
+func SortTwoTypesArray_1(arr []int, istype FnIsArrayType) {
+
+	low := 0
+	high := len(arr) - 1
+
+	for low <= high {
+
+		if istype(arr[low]) {
+			low++
+		} else if !istype(arr[high]) {
+			high--
+		} else {
+			arr[low], arr[high] = arr[high], arr[low]
+			high--
+		}
+	}
+
+}
+
 func isArrayTypeZero(i int) bool {
 	if i == 0 {
 		return true

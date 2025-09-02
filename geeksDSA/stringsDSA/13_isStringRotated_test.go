@@ -11,9 +11,11 @@ type stringRotatedTc struct {
 var stringRotatedTcs = func() []stringRotatedTc {
 	return []stringRotatedTc{
 		{"abcd", "dcba", false},
+		{"abcd", "abcd", true},
 		{"abcd", "cdab", true},
 		{"abaaa", "baaaa", true},
 		{"abab", "abba", false},
+		{"aba", "aab", true},
 	}
 }
 
@@ -21,7 +23,7 @@ func Test_IsStringRotated(t *testing.T) {
 
 	for _, tc := range stringRotatedTcs() {
 
-		got := IsRotated(tc.original, tc.str)
+		got := IsRotated_1(tc.original, tc.str)
 
 		if got != tc.IsRotated {
 			t.Error("Is rotrted error")

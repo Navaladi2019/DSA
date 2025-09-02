@@ -39,7 +39,7 @@ func LongestSubStringEfficient(str string) int {
 
 	txtArr := make([]int, 256)
 
-	for i := 0; i < len(txtArr); i++ {
+	for i := range txtArr {
 		txtArr[i] = -1
 	}
 
@@ -81,4 +81,35 @@ func LongestSubstringPractice(str string) (res int) {
 	}
 
 	return
+}
+
+func longEstSubstring_1(str string) int {
+
+	res := 0
+
+	textArr := make([]int, 256)
+
+	lastDuplicateIndex := -1
+
+	for i := 0; i < len(textArr); i++ {
+		textArr[i] = -1
+	}
+
+	for i := 0; i < len(str); i++ {
+
+		existing := textArr[str[i]]
+		lastDuplicateIndex = max(existing, lastDuplicateIndex)
+
+		textArr[str[i]] = i
+
+		if lastDuplicateIndex == -1 {
+			res = i + 1
+		} else {
+			res = max(i-lastDuplicateIndex, res)
+		}
+
+	}
+
+	return res
+
 }

@@ -18,7 +18,7 @@ func Test_SortTwoTypesArray(t *testing.T) {
 
 	for _, tc := range SortTwoTypesArraytcs() {
 
-		SortTwoTypesArray(tc.arr, tc.fn)
+		SortTwoTypesArray_1(tc.arr, tc.fn)
 
 		for i := 0; i < len(tc.want); i++ {
 

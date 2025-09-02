@@ -1,6 +1,6 @@
 package hashing
 
-func MoreThan_n_bu_k_appearance(arr []int, k int) []int {
+func MoreThan_n_by_k_appearance(arr []int, k int) []int {
 	res := make([]int, 0, 0)
 
 	dict := make(map[int]int)

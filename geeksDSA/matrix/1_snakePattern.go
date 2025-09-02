@@ -19,3 +19,24 @@ func GetArrayInSnakePattern(mat [][]int) (arr []int) {
 
 	return arr
 }
+
+func GetArrayInSnakePattern_1(mat [][]int) (arr []int) {
+
+	isLeft := true
+
+	res := make([]int, 0, len(mat)*len(mat[0]))
+
+	for i := 0; i < len(mat); i++ {
+		if isLeft {
+			res = append(res, mat[i]...)
+			isLeft = false
+		} else {
+			for j := len(mat[i]) - 1; j >= 0; j-- {
+				res = append(res, mat[i][j])
+			}
+			isLeft = true
+		}
+	}
+
+	return res
+}

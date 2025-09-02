@@ -14,7 +14,7 @@ func Test_RemoveDuplicateFromSortedLL(t *testing.T) {
 
 	fmt.Println("****")
 
-	l = RemoveDuplicateFromLL(l)
+	l = RemoveDuplicateFromLL_1(l)
 
 	RecursiveLinkedList(l.head)
 

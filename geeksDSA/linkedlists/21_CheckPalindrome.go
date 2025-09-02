@@ -63,3 +63,42 @@ func IsPalindrome(l SinglyLinkedList) bool {
 
 	return true
 }
+
+func IsPalindrome_Efficient(l SinglyLinkedList) bool {
+
+	h := l.head
+
+	slow, fast := h, h
+
+	for fast.next != nil && fast.next.next != nil {
+
+		fast = fast.next.next
+		slow = slow.next
+	}
+
+	curr := slow.next
+
+	// here we are reversing linked list
+	var prev *NodeSingle
+	for curr != nil {
+		tempNext := curr.next
+		curr.next = prev
+		prev = curr
+		curr = tempNext
+
+	}
+
+	slow = l.head
+
+	for prev != nil {
+
+		if prev.data != slow.data {
+			return false
+		}
+
+		slow = slow.next
+		prev = prev.next
+	}
+
+	return true
+}

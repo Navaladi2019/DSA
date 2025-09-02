@@ -27,6 +27,9 @@ func IsBalancedParenthesis(str string) bool {
 	return sta.isEmpty()
 }
 
+// ismatch checks if the given pair of runes represents matching opening and closing brackets.
+// It returns true if 'open' and 'close' form a valid pair of parentheses, curly braces, or square brackets.
+// Supported pairs are: '()', '{}', and '[]'.
 func ismatch(open rune, close rune) bool {
 
 	switch open {
@@ -55,4 +58,27 @@ func ismatch(open rune, close rune) bool {
 		return false
 
 	}
+}
+
+func IsBalancedParanthesis_SImple(str string) bool {
+
+	r := []rune(str)
+
+	s := ArrStack[rune]{}
+
+	for _, v := range r {
+		if v == '(' || v == '[' || v == '{' {
+			s.Push(v)
+			continue
+		}
+
+		if ex, ok := s.Peek(); !(ok && ismatch(ex, v)) {
+			return false
+		} else {
+			s.Pop()
+		}
+
+	}
+
+	return s.IsEmpty()
 }

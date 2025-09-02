@@ -25,7 +25,7 @@ func Test_BoundaryTraversalTcs(t *testing.T) {
 
 	for _, tc := range BoundaryTraversalTcs() {
 
-		got := BoundaryTraversal(tc.mat)
+		got := BoundaryTraversal_1(tc.mat)
 
 		for i := 0; i < len(got); i++ {
 			if tc.want[i] != got[i] {

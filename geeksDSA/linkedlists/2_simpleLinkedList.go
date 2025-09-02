@@ -100,6 +100,27 @@ func (l *SinglyLinkedList) DeleteLast() {
 	l.count--
 }
 
+func (l *SinglyLinkedList) DeleteLast_1() {
+
+	if l.head == nil || l.head.next == nil {
+		l.head = nil
+		return
+	}
+
+	curr := l.head
+
+	prev := curr
+
+	for curr != nil {
+		if curr.next == nil {
+			prev.next = nil
+			break
+		}
+		prev = curr
+		curr = curr.next
+	}
+}
+
 func (l *SinglyLinkedList) SearchIterative(val interface{}) int {
 
 	curr := l.head
@@ -165,4 +186,17 @@ func (l *SinglyLinkedList) Reverse() {
 
 	}
 	l.head = prev
+}
+
+func (l *SinglyLinkedList) Reverse_1() {
+
+	var prev *NodeSingle = nil
+
+	curr := l.head
+
+	for curr != nil {
+		tempCurr := curr.next
+		curr.next = prev
+		prev, curr = curr, tempCurr
+	}
 }

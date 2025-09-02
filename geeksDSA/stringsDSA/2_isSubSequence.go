@@ -37,3 +37,39 @@ func ISSubSequenceRecursion(str string, str2 string, n int, m int) bool {
 	}
 
 }
+
+func ISSubSequence_1(str string, str2 string) bool {
+
+	j := 0
+	for i := 0; i < len(str) && j < len(str2); i++ {
+
+		if str[i] == str2[j] {
+			j++
+		}
+
+	}
+	if j == len(str2) {
+		return true
+	}
+
+	return false
+}
+
+func ISSubSequence_2(s1 string, s2 string) bool {
+
+	j := 0
+
+	for i := 0; i < len(s1); i++ {
+
+		if s1[i] == s2[j] {
+			j++
+		}
+
+		if j == len(s2) {
+			return true
+		}
+
+	}
+
+	return false
+}

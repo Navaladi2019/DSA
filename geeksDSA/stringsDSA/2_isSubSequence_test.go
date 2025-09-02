@@ -4,13 +4,13 @@ import "testing"
 
 func Test_ISSubSequence(t *testing.T) {
 
-	got := ISSubSequence("ABCD", "AD")
+	got := ISSubSequence_2("ABCD", "AD")
 
 	if got != true {
 		t.Error("Has Error in subsequence")
 	}
 
-	got = ISSubSequence("ABCDE", "AED")
+	got = ISSubSequence_2("ABCDE", "AED")
 
 	if got != false {
 		t.Error("Has Error in subsequence")

@@ -36,7 +36,7 @@ func NativePatternSearching_other(str string, patt string) (bool, []int) {
 		j := 0
 		for j < len(patt) {
 
-			if str[i] != patt[j] {
+			if str[i+j] != patt[j] {
 				break
 			}
 			j++

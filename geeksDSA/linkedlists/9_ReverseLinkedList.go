@@ -44,3 +44,18 @@ func ReverseLinkedListRecursively1(current *NodeSingle, p *NodeSingle) *NodeSing
 	return ReverseLinkedListRecursively1(current, p)
 
 }
+
+func ReverseLLREcursive(head *NodeSingle) *NodeSingle {
+
+	if head == nil || head.next == nil {
+		return head
+	}
+
+	lhead := ReverseLLREcursive(head.next)
+	ltail := head.next
+	head.next = nil
+	ltail.next = head
+
+	return lhead
+
+}

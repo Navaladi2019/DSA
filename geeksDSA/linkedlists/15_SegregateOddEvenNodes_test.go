@@ -14,7 +14,7 @@ func Test_SegregateOddEvenNodes(t *testing.T) {
 	RecursiveLinkedList(l.head)
 
 	fmt.Println("****")
-	l = SegregateOddEvenNodes_Efficient(l)
+	h := SegregateOddEvenNodes_2(l.head)
 
-	RecursiveLinkedList(l.head)
+	RecursiveLinkedList(h)
 }
